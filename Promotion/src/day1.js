@@ -12,7 +12,29 @@ var Day1Layer = cc.Layer.extend({
 		label.y = size.width / 4;
 		this.addChild(label);
 		//init music
-		//[[OALSimpleAudio sharedInstance] playFile:@"Cannery.wav"]
+		
+		//desk+player sprite
+		this.sprite = new cc.Sprite(res.desk);
+		this.sprite.attr({
+			x: size.width / 2,
+			y: size.height / 2,
+			scale: 0.35
+		});
+		this.addChild(this.sprite, 0);
+
+		//add a keyboard event listener
+    	cc.eventManager.addListener({
+	        event: cc.EventListener.KEYBOARD,
+	        onKeyPressed:  function(keyCode, event){
+	            var label = keyCode.toString();
+	            console.log(label);
+	        },
+	        onKeyReleased: function(keyCode, event){
+	            var label = keyCode.toString();
+	            console.log(label);	        }
+    	}, this);   
+
+		return true;
 	}
 });
 
