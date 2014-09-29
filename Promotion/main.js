@@ -52,7 +52,7 @@ cc.game.onStart = function(){
     cc.view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.resizeWithBrowserSize(true);
     //load resources
-    //cc.AudioEngine.getInstance().init("wav");
+    //cc.AudioEngine.getInstance().init("mp3,ogg,wav");
     //cc.Loader.shareLoader().preload([
     //    {type:"bgm",src:"res/Audio/Cannery"}
    //]);
