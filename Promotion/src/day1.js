@@ -10,6 +10,7 @@ var Day1Screen = cc.Layer.extend({
 		label.y = 0;
 		this.addChild(label);
 
+		//moves "day 1 from bottom to off screen (top)"
 		label.runAction(
             cc.spawn(
                 cc.moveBy(5.5, cc.p(0, size.height + 40))
@@ -27,12 +28,12 @@ var Day1Layer = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 		//music
-		//cc.audioEngine.playMusic(res.Cannery)
+		cc.audioEngine.playMusic(res.Cannery)
 
 		//desk+player sprite
 		this._desk = new cc.Sprite(res.desk);
 		this._desk.attr({
-			x: size.width / 2,
+			x: size.width / 3,
 			y: size.height / 2,
 			scale: 0.35
 		});
