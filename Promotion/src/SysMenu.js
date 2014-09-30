@@ -10,16 +10,14 @@ var SysMenu = cc.Layer.extend({
 		//day1 sprite from menu sprite sheet
 		var Day1Normal = new cc.Sprite(res.menu, cc.rect(0,0,126,33));
 		var Day1Selected = new cc.Sprite(res.menu, cc.rect(0,33,126,33));
-		var Day1Disabled = new cc.Sprite(res.menu, cc.rect(0, 66, 126, 33));
 
 		//day2 sprite from menu sprite sheet
 		var Day2Normal = new cc.Sprite(res.menu, cc.rect(126,0,126,33));
 		var Day2Selected = new cc.Sprite(res.menu, cc.rect(126,33,126,33));
-		var Day2Disabled = new cc.Sprite(res.menu, cc.rect(126, 66, 126, 33));
 
 		//create menu sprite from the groups of sprites above (includes function for when pressed)
-		var day1 = new cc.MenuItemSprite(Day1Normal, Day1Selected, Day1Disabled, this.onDay1, this);
-		var day2 = new cc.MenuItemSprite(Day2Normal, Day2Selected, Day2Disabled, this.onDay2, this);
+		var day1 = new cc.MenuItemSprite(Day1Normal, Day1Selected, this.onDay1, this);
+		var day2 = new cc.MenuItemSprite(Day2Normal, Day2Selected, this.onDay2, this);
 
 		//put these on the middle of the screen
 		var mainMenu = new cc.Menu(day1, day2);
