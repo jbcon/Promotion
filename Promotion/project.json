@@ -15,6 +15,7 @@
         "src/app.js",
         "src/day1.js",
         "src/day2.js",
-        "src/SysMenu.js"
+        "src/SysMenu.js",
+        "src/night.js"
     ]
 }
