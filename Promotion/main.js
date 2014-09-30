@@ -57,7 +57,7 @@ cc.game.onStart = function(){
     //    {type:"bgm",src:"res/Audio/Cannery"}
    //]);
     cc.LoaderScene.preload(g_resources, function () {
-        cc.director.runScene(new Day1Scene());
+        //cc.director.runScene(new Day1Scene());
         cc.director.runScene(new Day2Scene());
     }, this);
 };
