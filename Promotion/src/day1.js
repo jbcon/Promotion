@@ -1,6 +1,7 @@
 
 var Day1Screen = cc.Layer.extend({
 	ctor:function () {
+		this._super();
 		//get window size
 		var size = cc.winSize;
 		//maybe screen with "day 1"
