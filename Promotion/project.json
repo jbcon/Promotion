@@ -16,6 +16,9 @@
         "src/day1.js",
         "src/day2.js",
         "src/SysMenu.js",
-        "src/night.js"
+        "src/night.js",
+        "src/night_Animation_Layer.js",
+        "src/night_Background_Layer.js",
+        "src/night_Status_Layer.js"
     ]
 }

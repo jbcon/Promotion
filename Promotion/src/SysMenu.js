@@ -29,7 +29,7 @@ var SysMenu = cc.Layer.extend({
 		mainMenu.alignItemsVerticallyWithPadding(10);
         mainMenu.x = size.width/2;
         mainMenu.y = size.height/2;
-        this.addChild(mainMenu, 1, 2, 3);
+        this.addChild(mainMenu, 1, 2);
 	},
 	//when day1 sprite is clicked (currently "new game")
 	onDay1:function (pSender) {
