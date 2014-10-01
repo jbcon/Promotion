@@ -10,7 +10,9 @@ var res = {
     N_runner_plist : "res/images/N_running.plist",
     N_map_png : "res/images/N_map.png",
     N_map00_tmx : "res/images/N_map00.tmx",
-    N_map01_tmx : "res/images/N_map01.tmx"
+    N_map01_tmx : "res/images/N_map01.tmx",
+    N_checks_png : "res/images/N_checks.png",
+    N_checks_plist : "res/images/N_checks.plist"
 };
 
 var g_resources = [
@@ -23,5 +25,7 @@ var g_resources = [
     res.N_runner_plist,
     res.N_map_png,
     res.N_map00_tmx,
-    res.N_map01_tmx
+    res.N_map01_tmx,
+    res.N_checks_png,
+    res.N_checks_plist
 ];
