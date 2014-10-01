@@ -30,6 +30,8 @@ var NightScene = cc.Scene.extend({
     collisionCheckBegin:function(arbiter, space){
     var shapes = arbiter.getShapes();
     this.shapesToRemove.push(shapes[1]);
+    var statusLayer = this.getChildByTag(TagOfLayer.Status);
+    statusLayer.addCheck(1);
     },
     
     update:function(dt){
