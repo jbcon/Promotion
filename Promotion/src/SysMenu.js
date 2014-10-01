@@ -15,12 +15,17 @@ var SysMenu = cc.Layer.extend({
 		var Day2Normal = new cc.Sprite(res.menu, cc.rect(126,0,126,33));
 		var Day2Selected = new cc.Sprite(res.menu, cc.rect(126,33,126,33));
 
+        //night sprite from menu sprite sheet
+        var NightNormal = new cc.Sprite(res.menu, cc.rect(126,0,126,33));
+        var NightSelected = new cc.Sprite(res.menu, cc.rect(126, 33, 126, 33));
+        
 		//create menu sprite from the groups of sprites above (includes function for when pressed)
 		var day1 = new cc.MenuItemSprite(Day1Normal, Day1Selected, this.onDay1, this);
 		var day2 = new cc.MenuItemSprite(Day2Normal, Day2Selected, this.onDay2, this);
+        var night = new cc.MenuItemSprite(NightNormal, NightSelected, this.onNight, this);
 
 		//put these on the middle of the screen
-		var mainMenu = new cc.Menu(day1, day2);
+		var mainMenu = new cc.Menu(day1, day2, night);
 		mainMenu.alignItemsVerticallyWithPadding(10);
         mainMenu.x = size.width/2;
         mainMenu.y = size.height/2;
@@ -38,6 +43,12 @@ var SysMenu = cc.Layer.extend({
     onDay2:function (pSender) {
     	console.log("day2");
 		var scene = new Day2Scene();
+        cc.director.runScene(new cc.TransitionFade(1.2, scene));
+    },
+    //when night sprite is clicked (currently "options")
+    onNight:function (pSender) {
+    	console.log("night");
+		var scene = new NightScene();
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }
 });
