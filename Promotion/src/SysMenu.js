@@ -28,7 +28,7 @@ var SysMenu = cc.Layer.extend({
 		console.log("day1");
 		var scene = new cc.Scene();
 		scene.addChild(new Day1Layer());
-		//scene.addChild(new Day1Screen());
+		scene.addChild(new Day1Screen());
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     },
     onDay2:function (pSender) {
