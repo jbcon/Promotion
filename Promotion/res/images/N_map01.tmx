@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="N_map" tilewidth="32" tileheight="32">
+  <image source="N_map.png" width="128" height="128"/>
+ </tileset>
+ <layer name="圖塊層 1" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYB7Fo5hIzE1lDDJTAIqZByEfAIMUA/0=
+  </data>
+ </layer>
+</map>

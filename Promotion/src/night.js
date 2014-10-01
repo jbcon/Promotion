@@ -1,13 +1,16 @@
 
 var NightScene = cc.Scene.extend({
     space:null,
+    gameLayer:null,
     
     onEnter:function () {
         this._super();
         this.initPhysics();
-        this.addChild(new BackgroundLayer());
-        this.addChild(new AnimationLayer(this.space));
-        this.addChild(new StatusLayer());
+        this.gameLayer = cc.Layer.create();
+        this.gameLayer.addChild(new BackgroundLayer(), 0, TagOfLayer.background);
+        this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        this.addChild(this.gameLayer);
+        this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
         
         this.scheduleUpdate();
     },
@@ -22,6 +25,11 @@ var NightScene = cc.Scene.extend({
     
     update:function(dt){
     this.space.step(dt);
+    
+    var animationLayer = this.gameLayer.getChildByTag(TagOfLayer.Animation);
+    var eyeX = animationLayer.getEyeX();
+    
+    this.gameLayer.setPosition(cc.p(-eyeX,0));
     }
 });
 
