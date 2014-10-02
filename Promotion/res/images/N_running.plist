@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>N_Player_test_1.png</key>
+            <key>N_Player_Jump_test_0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{239,305}}</string>
@@ -17,7 +17,72 @@
                 <key>sourceSize</key>
                 <string>{239,305}</string>
             </dict>
+            <key>N_Player_Jump_test_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,309},{239,305}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{239,305}}</string>
+                <key>sourceSize</key>
+                <string>{239,305}</string>
+            </dict>
+            <key>N_Player_Jump_test_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,616},{239,305}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{239,305}}</string>
+                <key>sourceSize</key>
+                <string>{239,305}</string>
+            </dict>
+            <key>N_Player_Jump_test_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,923},{239,305}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{239,305}}</string>
+                <key>sourceSize</key>
+                <string>{239,305}</string>
+            </dict>
+            <key>N_Player_test_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1230},{239,305}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{239,305}}</string>
+                <key>sourceSize</key>
+                <string>{239,305}</string>
+            </dict>
             <key>N_Player_test_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1537},{239,305}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{239,305}}</string>
+                <key>sourceSize</key>
+                <string>{239,305}</string>
+            </dict>
+            <key>N_Player_test_3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{243,2},{239,305}}</string>
@@ -30,23 +95,10 @@
                 <key>sourceSize</key>
                 <string>{239,305}</string>
             </dict>
-            <key>N_Player_test_3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{484,2},{239,305}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{239,305}}</string>
-                <key>sourceSize</key>
-                <string>{239,305}</string>
-            </dict>
             <key>N_Player_test_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{725,2},{239,305}}</string>
+                <string>{{243,309},{239,305}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +111,7 @@
             <key>N_Player_test_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{966,2},{239,305}}</string>
+                <string>{{243,616},{239,305}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +124,7 @@
             <key>N_Player_test_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1207,2},{239,305}}</string>
+                <string>{{243,923},{239,305}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +137,7 @@
             <key>N_Player_test_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1448,2},{239,305}}</string>
+                <string>{{243,1230},{239,305}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -103,9 +155,9 @@
             <key>realTextureFileName</key>
             <string>N_running.png</string>
             <key>size</key>
-            <string>{1690,309}</string>
+            <string>{484,1778}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:41afc098950c37df31eace406773adc2:5ddbedba910a97648da263363704bef8:9a58a45dcde351405eb76b38ad3bf3a3$</string>
+            <string>$TexturePacker:SmartUpdate:9380d27c67abdcfa28fa952db499d507:1ef4be1ce16e05c975ba02054e7c73f2:9a58a45dcde351405eb76b38ad3bf3a3$</string>
             <key>textureFileName</key>
             <string>N_running.png</string>
         </dict>
