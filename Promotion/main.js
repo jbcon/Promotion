@@ -57,8 +57,8 @@ cc.game.onStart = function(){
     //    {type:"bgm",src:"res/Audio/Cannery"}
    //]);
     cc.LoaderScene.preload(g_resources, function() {
-        cc.director.runScene(SysMenu.scene());
-        //cc.director.runScene(new NightScene());
+        //cc.director.runScene(SysMenu.scene());
+        cc.director.runScene(new NightScene());
     }, this);
     
     //load resources

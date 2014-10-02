@@ -21,45 +21,81 @@ var Day1Screen = cc.Layer.extend({
 
 
 var Day1Layer = cc.Layer.extend({
-	_desk:null,
+	_sprite:null,
 	ctor:function () {
 		//super init
 		this._super();
+		
 		//get window size
 		var size = cc.winSize;
+		var key = ""; //for input
+		var count = 0; //for accessing each sprite
+		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
 		cc.audioEngine.playMusic(res.day1_music);
 
-		//desk+player sprite
-		this._desk = new cc.Sprite(res.desk);
-		this._desk.attr({
+		//sprite array
+		spriteList = [res.desk, res.outbox, res.shred, res.file];
+
+		//sprite init
+		this._sprite = cc.Sprite.create(spriteList[count]);
+		this._sprite.attr({
 			x: size.width / 3,
 			y: size.height / 2,
 			scale: 0.35
 		});
-		this.addChild(this._desk, 0);
+		this.addChild(this._sprite);
 
 		//keyboard event listener
     	cc.eventManager.addListener({
 	        event: cc.EventListener.KEYBOARD,
-	        onKeyPressed:  function(keyCode, event){
-	        	var key;
-	        	if (keyCode == 37) key = "LEFT";
-	            if (keyCode == 38) key = "UP";
-	            if (keyCode == 39) key = "RIGHT";
-	            if (keyCode == 40) key = "DOWN";
+	        onKeyPressed: function(keyCode, event){
+	        	if (keyCode == 37) {
+	        		key = "LEFT";
+	        		count = 1;
+	        		}
+/*	            else if (keyCode == 38) {
+	            	key = "UP";
+	            	count = 0;
+				}
+*/	            else if (keyCode == 39) {
+	            	key = "RIGHT";
+	            	count = 3;
+				}
+	            else if (keyCode == 40) {
+	            	key = "DOWN";
+	            	count = 2;
+	            }
+	            else count = 0;
+
+	            //handle animation
+	            event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
+	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
+				event.getCurrentTarget()._sprite.attr({
+					x: size.width / 3,
+					y: size.height / 2,
+					scale: 0.35
+				});
+				event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
+	            
 	            console.log(key);
 	        },
 	        onKeyReleased: function(keyCode, event){
-	            var key = keyCode.toString();
-	            console.log(key);	        }
-    		}, this);   
-
-    	
-
-		return true;
-	}
+	        	//set delay (ms)
+	        	setTimeout(function() {
+	        		event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
+	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
+					event.getCurrentTarget()._sprite.attr({
+					x: size.width / 3,
+					y: size.height / 2,
+					scale: 0.35
+					});
+					event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
+	        	}, 500);	        
+	        }
+    	}, this); 
+	},
 });
 /*
 var Day1Scene = cc.Scene.extend({

@@ -1,52 +1,72 @@
 
 var NightScene = cc.Scene.extend({
-    space:null,
-    gameLayer:null,
-    shapesToRemove :[],
+    space:null, // space
+    gameLayer:null, // gamelayer that inculde background, animation layer
+    shapesToRemove :[], // stuff to remove
+    timer: 0,
     
     onEnter:function () {
         this._super();
-        this.initPhysics();
-        this.gameLayer = cc.Layer.create();
-        this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);
-        this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        this.initPhysics(); // initial physic
+        this.gameLayer = cc.Layer.create(); // create game layer (layer that include background, and animation layer
+        this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background); // add background layer
+        this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation); // add animation layer
         this.addChild(this.gameLayer);
-        this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
+        this.addChild(new StatusLayer(), 0, TagOfLayer.Status); // add status layer
         
-        this.scheduleUpdate();
+        this.scheduleUpdate(); // update
     },
     
+    // initial physic in the game
     initPhysics:function(){
-    this.space = new cp.Space();
-    this.space.gravity = cp.v(0,-350);
-    var wallBottom = new cp.SegmentShape(this.space.staticBody,
-    cp.v(0,g_groundHight), cp.v(4294967295, g_groundHight), 0);
-    this.space.addStaticShape(wallBottom);
-    
-    this.space.addCollisionHandler(SpriteTag.runner, SpriteTag.check,
-    this.collisionCheckBegin.bind(this), null, null, null);
+        // create space
+        this.space = new cp.Space();
+        this.space.gravity = cp.v(0,-350);
+        
+        // create wall
+        var wallBottom = new cp.SegmentShape(this.space.staticBody,
+                             cp.v(0,g_groundHight), cp.v(4294967295, 
+                             g_groundHight), 0);
+        this.space.addStaticShape(wallBottom);
+        
+        // create collision check for runner and wall
+        this.space.addCollisionHandler(SpriteTag.runner, SpriteTag.check,
+        this.collisionCheckBegin.bind(this), null, null, null);
     },
     
+    // collision handler for player and checks
     collisionCheckBegin:function(arbiter, space){
-    var shapes = arbiter.getShapes();
-    this.shapesToRemove.push(shapes[1]);
-    var statusLayer = this.getChildByTag(TagOfLayer.Status);
-    statusLayer.addCheck(1);
+        var shapes = arbiter.getShapes();
+        this.shapesToRemove.push(shapes[1]); // remove check from screen
+        var statusLayer = this.getChildByTag(TagOfLayer.Status);
+        statusLayer.addCheck(1); // add check point
     },
     
+    // update check for chipmunk engine
     update:function(dt){
-    this.space.step(dt);
+        this.space.step(dt); // update
     
-    var animationLayer = this.gameLayer.getChildByTag(TagOfLayer.Animation);
-    var eyeX = animationLayer.getEyeX();
+        var animationLayer = this.gameLayer.getChildByTag(TagOfLayer.Animation); 
+        var eyeX = animationLayer.getEyeX(); 
+        this.gameLayer.setPosition(cc.p(-eyeX,0)); // update scope of the game
     
-    this.gameLayer.setPosition(cc.p(-eyeX,0));
+        // remove everything that is out of scope
+        for(var i = 0; i < this.shapesToRemove.length; i++){
+            var shape = this.shapesToRemove[i];
+            this.gameLayer.getChildByTag(TagOfLayer.background).removeObjectByShape(shape);
+        }
+        this.shapesToRemove = [];
+        
+        timer+1;
+        if(timer == 100){
+            gameOver();
+        }
+    },
     
-    for(var i = 0; i < this.shapesToRemove.length; i++){
-    var shape = this.shapesToRemove[i];
-    this.gameLayer.getChildByTag(TagOfLayer.background).removeObjectByShape(shape);
-    }
-    this.shapesToRemove = [];
+    gameOver:function(){
+        cc.log("==game over");
+        var scene = new Day2Scene();
+        cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }
 });
 
