@@ -3,7 +3,7 @@ var NightScene = cc.Scene.extend({
     space:null, // space
     gameLayer:null, // gamelayer that inculde background, animation layer
     shapesToRemove :[], // stuff to remove
-    timer: 0,
+    timer:0,
     
     onEnter:function () {
         this._super();
@@ -57,9 +57,9 @@ var NightScene = cc.Scene.extend({
         }
         this.shapesToRemove = [];
         
-        timer+1;
-        if(timer == 100){
-            gameOver();
+        this.timer +=1;
+        if(this.timer == 10000){
+            this.gameOver();
         }
     },
     

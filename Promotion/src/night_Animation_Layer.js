@@ -1,67 +1,60 @@
-// define enum for player status
-if(typeof PlayerStat == "undefined") {
-    var playerStat = {}; // player's status
-    playerStat.running = 0; // set player currently to running
-    playerStat.jumpUp = 1; // number represent for player jump
-    playerStat.jumpDown = 2; // number represent for player fall
+// define enum for runner status
+if(typeof RunnerStat == "undefined") {
+    var RunnerStat = {};
+    RunnerStat.running = 0;
+    RunnerStat.jumpUp = 1;
+    RunnerStat.jumpDown = 2;
 };
 
 var AnimationLayer = cc.Layer.extend({
-    spriteSheet: null, // spriteSheet for player
-    runningAction: null, // running action for player
-    sprite: null, // sprite for player
-    space:null, // space
-    body:null, // body for player
-    shape:null, // shape for player 
-    stat:playerStat.running, // status of player
-    jumpUpAction:null, // bool for jump up
-    jumpDownAction:null, // bool for jump down
-    keyIsPressed: false, // check if "space" is clicked
+    spriteSheet: null,
+    runningAction: null,
+    sprite: null,
+    space:null,
+    body:null,
+    shape:null,
+    stat:RunnerStat.running,
+    jumpUpAction:null,
+    jumpDownAction:null,
+    keyIsPressed: false,
     
-    // constructor
     ctor:function (space) {
         this._super();
         this.space = space;
         this.init();
         
-        /* for debug
         this._debugNode = cc.PhysicsDebugNode.create(this.space);
+        this._debugNode.setVisible(false);
         this.addChild(this._debugNode,10);
-        */
     },
     
-    // initialize
     init:function () {
         this._super();
 
-        // initialize player's animation
-        this.initAction();
-        
-        //create the player sprite
+        //create the hero sprite
         cc.spriteFrameCache.addSpriteFrames(res.N_runner_plist);
         this.spriteSheet = cc.SpriteBatchNode.create(res.N_runner_png);
         this.addChild(this.spriteSheet);
         
-        //create player through physic engine
-        this.sprite = cc.PhysicsSprite.create("#N_Player_test_1.png");
-        var contentSize = this.sprite.getContentSize();
+        this.initAction();
         
-        // initialize body
+        //create runner through physic engine
+        this.sprite = cc.PhysicsSprite.create("#N_Player_1.png");
+        var contentSize = this.sprite.getContentSize();
+        // init body
         this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
-        this.body.p = cc.p(g_playerStartX, g_groundHight + contentSize.height / 2);
+        this.body.p = cc.p(g_runnerStartX, g_groundHight + contentSize.height / 2);
         this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
         this.space.addBody(this.body);
-        
-        //initialize shape
+        //init shape
         this.shape = new cp.BoxShape(this.body, contentSize.width - 14, contentSize.height);
         this.space.addShape(this.shape);
-    
-        // initialize sprite 
+        
         this.sprite.setBody(this.body);        
         this.sprite.runAction(this.runningAction);
+        
         this.spriteSheet.addChild(this.sprite);
         
-        // set up listener for "space" (the "jump" key)
         var listener = cc.EventListener.create({
 			event: cc.EventListener.KEYBOARD,
 	        onKeyPressed:  function(keyCode, event){
@@ -77,38 +70,34 @@ var AnimationLayer = cc.Layer.extend({
 	        	}
 	        }
 	    });
-		cc.eventManager.addListener(listener, this); // add listener
+		cc.eventManager.addListener(listener, this);
         
-        this.scheduleUpdate(); // update
+        this.scheduleUpdate();
     },
     
-    // jump action
     jump: function(){
-		//cc.log("jump"); for debug
-        if(this.stat == playerStat.running){ 
-        this.body.applyImpulse(cp.v(0,500), cp.v(0,0)); // apply effect on player
-        this.stat = playerStat.jumpUp; // switch status
-        this.sprite.stopAllActions(); // switch animation
+		cc.log("jump");
+        if(this.stat == RunnerStat.running){
+        this.body.applyImpulse(cp.v(0,500), cp.v(0,0));
+        this.stat = RunnerStat.jumpUp;
+        this.sprite.stopAllActions();
         this.sprite.runAction(this.jumpUpAction);
         }	
 	},
     
-    // initialize player's movement
     initAction:function(){
-        // initialize running animation
+        // init runningAction
         var animFrames = [];
-        for (var i = 1; i < 8; i++) {
-            var str = "N_Player_test_" + i + ".png";
+        for (var i = 1; i < 9; i++) {
+            var str = "N_Player_" + i + ".png";
             var frame = cc.spriteFrameCache.getSpriteFrame(str);
             animFrames.push(frame);
         }
-        
-        // initialize runningAction 
+                
         var animation = cc.Animation.create(animFrames, 0.1);
         this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
         this.runningAction.retain();
-        
-        // initialize jumpUp animation
+        /*
         animFrames = [];
         for (var i = 0; i < 4; i++) {
             var str = "N_Player_Jump_test_" + i + ".png";
@@ -116,12 +105,10 @@ var AnimationLayer = cc.Layer.extend({
             animFrames.push(frame);
         }
         
-        // initialize jumpUpAction
         animation = cc.Animation.create(animFrames, 0.2);
         this.jumpUpAction = cc.Animate.create(animation);
         this.jumpUpAction.retain();
         
-        // initialize jumpDown
         animFrames = [];
         for (var i = 0; i < 4; i++) {
             var str = "N_Player_Jump_test_" + i + ".png";
@@ -129,28 +116,28 @@ var AnimationLayer = cc.Layer.extend({
             animFrames.push(frame);
         }
         
-        // initialize jumpDown Action
         animation = cc.Animation.create(animFrames, 0.3);
         this.jumpDownAction = cc.Animate.create(animation);
         this.jumpDownAction.retain();  
+    
+    */
     },
     
-    // update for chipmunk engine
      update:function (dt) {
         
-        this.space.step(dt); //update 
+        this.space.step(dt);
         
-        // check and update player stat and switch between animation
+        // check and update runner stat
         var vel = this.body.getVel();
-        if (this.stat == playerStat.jumpUp) {
+        if (this.stat == RunnerStat.jumpUp) {
             if (vel.y < 0.1) {
-                this.stat = playerStat.jumpDown;
+                this.stat = RunnerStat.jumpDown;
                 this.sprite.stopAllActions();
                 this.sprite.runAction(this.jumpDownAction);
             }
-        } else if (this.stat == playerStat.jumpDown) {
+        } else if (this.stat == RunnerStat.jumpDown) {
             if (vel.y == 0) {
-                this.stat = playerStat.running;
+                this.stat = RunnerStat.running;
                 this.sprite.stopAllActions();
                 this.sprite.runAction(this.runningAction);
             }
@@ -158,7 +145,6 @@ var AnimationLayer = cc.Layer.extend({
 
     },
     
-    // when exit scene, clean stuff up
     onExit:function() {
         this.runningAction.release();
         this.jumpUpAction.release();
@@ -166,8 +152,7 @@ var AnimationLayer = cc.Layer.extend({
         this._super();
     },
     
-    // get scope of the game
     getEyeX:function () {
-        return this.sprite.getPositionX() - g_playerStartX;
+        return this.sprite.getPositionX() - g_runnerStartX;
     }
 });
