@@ -16,7 +16,11 @@ var res = {
     N_map00_tmx : "res/images/N_map00.tmx",
     N_map01_tmx : "res/images/N_map01.tmx",
     N_checks_png : "res/images/N_checks.png",
-    N_checks_plist : "res/images/N_checks.plist"
+    N_checks_plist : "res/images/N_checks.plist",
+    
+    // Day 2
+    day2player_png: "res/images/day2player.png",
+    menu : "res/images/menu.png"
 };
 
 var g_resources = [
@@ -35,5 +39,7 @@ var g_resources = [
     res.N_map01_tmx,
     res.N_checks_png,
     res.N_checks_plist,
+	res.day2player_png,
     res.arrows
 ];
+

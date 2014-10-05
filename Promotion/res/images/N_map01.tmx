@@ -11,5 +11,6 @@
  <objectgroup name="check">
   <object x="164" y="155" width="31" height="27"/>
   <object x="212" y="114" width="112" height="93"/>
+  <object x="-20" y="126"/>
  </objectgroup>
 </map>

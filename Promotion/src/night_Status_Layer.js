@@ -1,25 +1,29 @@
 var StatusLayer = cc.Layer.extend({
-    labelCoin:null,
-    labelMeter:null,
-    coins:0,
+    labelCheck:null, // checks point label on screen
+    checks:0, // check points
 
+    // constructor
     ctor:function () {
         this._super();
         this.init();
     },
 
+    // initialize for status layer
     init:function () {
         this._super();
 
-        var winsize = cc.director.getWinSize();
+        // get window size
+        var winsize = cc.director.getWinSize(); 
 
-        this.labelCoin = cc.LabelTTF.create("Coins:0", "Helvetica", 20);
-        this.labelCoin.setColor(cc.color(0,0,0));//black color
-        this.labelCoin.setPosition(cc.p(70, winsize.height - 20));
-        this.addChild(this.labelCoin);
-
-        this.labelMeter = cc.LabelTTF.create("0M", "Helvetica", 20);
-        this.labelMeter.setPosition(cc.p(winsize.width - 70, winsize.height - 20));
-        this.addChild(this.labelMeter);
+        // create check point label on screen
+        this.labelCheck = cc.LabelTTF.create("Checks:0", "Helvetica", 20);
+        this.labelCheck.setPosition(cc.p(70, winsize.height - 20));
+        this.addChild(this.labelCheck);
+    },
+    
+    // addCheck point when player get checks
+    addCheck:function(num){
+        this.checks += num;
+        this.labelCheck.setString("Check:" + this.checks);
     }
 });
