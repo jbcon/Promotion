@@ -41,11 +41,47 @@ var Day1Layer = cc.Layer.extend({
 		//sprite init
 		this._sprite = cc.Sprite.create(spriteList[count]);
 		this._sprite.attr({
-			x: size.width / 3,
+			x: size.width / 4,
 			y: size.height / 2,
 			scale: 0.35
 		});
 		this.addChild(this._sprite);
+
+		//arrow bar at bottom
+		this._abar = cc.Sprite.create(res.arrows);
+		this._abar.attr({
+			x: size.width -175,
+			y: size.height/ 4,
+			scale: 0.8
+		});
+		this.addChild(this._abar);
+
+		//left arrow
+		this._larrow = cc.Sprite.create(res.arrows, cc.rect(0,0,110,100));
+		this._larrow.attr({
+			x: size.width -295,
+			y: size.height /3,
+			scale: 0.8
+		});
+		this.addChild(this._larrow);
+
+		//down arrow
+		this._darrow = cc.Sprite.create(res.arrows, cc.rect(150,0,110,100))
+		this._darrow.attr({
+			x: size.width -175,
+			y: size.height / 3,
+			scale: 0.8
+		});
+		this.addChild(this._darrow);
+
+		//right arrow
+		this._rarrow = cc.Sprite.create(res.arrows, cc.rect(300,0,110,100))
+		this._rarrow.attr({
+			x: size.width -55,
+			y: size.height / 3,
+			scale: 0.8
+		});
+		this.addChild(this._rarrow);
 
 		//keyboard event listener
     	cc.eventManager.addListener({
@@ -73,7 +109,7 @@ var Day1Layer = cc.Layer.extend({
 	            event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
 				event.getCurrentTarget()._sprite.attr({
-					x: size.width / 3,
+					x: size.width / 4,
 					y: size.height / 2,
 					scale: 0.35
 				});
@@ -87,12 +123,12 @@ var Day1Layer = cc.Layer.extend({
 	        		event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
 					event.getCurrentTarget()._sprite.attr({
-					x: size.width / 3,
+					x: size.width / 4,
 					y: size.height / 2,
 					scale: 0.35
 					});
 					event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
-	        	}, 500);	        
+	        	}, 80);	        
 	        }
     	}, this); 
 	},

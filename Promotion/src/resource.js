@@ -1,10 +1,11 @@
 var res = {
     day1_music : "res/Audio/Cannery.wav",
     desk : "res/images/Day1/D1_Neutral_st.png",
-    menu : "res/images/Day1/menu.png",
+    menu : "res/images/menu.png",
     file : "res/images/Day1/D1_File_st.png",
     shred : "res/images/Day1/D1_Shred_st.png",
     outbox : "res/images/Day1/D1_Outbox_st.png",
+    arrows : "res/images/Day1/arrow.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
@@ -33,5 +34,6 @@ var g_resources = [
     res.N_map00_tmx,
     res.N_map01_tmx,
     res.N_checks_png,
-    res.N_checks_plist
+    res.N_checks_plist,
+    res.arrows
 ];

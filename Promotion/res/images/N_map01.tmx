@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="N_map" tilewidth="32" tileheight="32">
+  <image source="N_map.png" width="128" height="128"/>
+ </tileset>
+ <layer name="Background" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYB7Fo5hIzE1lDDJTAIqZByEfAIMUA/0=
+  </data>
+ </layer>
+ <objectgroup name="check">
+  <object x="164" y="155" width="31" height="27"/>
+  <object x="212" y="114" width="112" height="93"/>
+ </objectgroup>
+</map>

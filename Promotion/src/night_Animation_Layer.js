@@ -10,6 +10,10 @@ var AnimationLayer = cc.Layer.extend({
         this._super();
         this.space = space;
         this.init();
+        
+        this._debugNode = cc.PhysicsDebugNode.create(this.space);
+        this._debugNode.setVisible(false);
+        this.addChild(this._debugNode,10);
     },
     init:function () {
         this._super();
@@ -48,5 +52,11 @@ var AnimationLayer = cc.Layer.extend({
         this.sprite.runAction(this.runningAction);
         
         this.spriteSheet.addChild(this.sprite);
+        
+        this.scheduleUpdate();
+    },
+    
+    getEyeX:function () {
+        return this.sprite.getPositionX() - g_runnerStartX;
     }
 });
