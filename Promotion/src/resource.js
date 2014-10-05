@@ -6,6 +6,7 @@ var res = {
     shred : "res/images/Day1/D1_Shred_st.png",
     outbox : "res/images/Day1/D1_Outbox_st.png",
     arrows : "res/images/Day1/arrow.png",
+    office : "res/images/office.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
@@ -40,6 +41,7 @@ var g_resources = [
     res.N_checks_png,
     res.N_checks_plist,
 	res.day2player_png,
-    res.arrows
+    res.arrows,
+    res.office
 ];
 

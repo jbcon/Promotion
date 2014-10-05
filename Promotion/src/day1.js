@@ -38,6 +38,15 @@ var Day1Layer = cc.Layer.extend({
 		cc.audioEngine.setMusicVolume(0.8);
 		cc.audioEngine.playMusic(res.day1_music);
 
+		//background
+		this._office = cc.Sprite.create(res.office);
+		this._office.attr({
+			x:410,
+			y:320,
+			scale:0.8
+		});
+		this.addChild(this._office);
+
 		//sprite array
 		spriteList = [res.desk, res.outbox, res.shred, res.file];
 
@@ -66,7 +75,7 @@ var Day1Layer = cc.Layer.extend({
 			y: size.height+40,
 			scale: 0.8
 		});
-		this.schedule(this.updateLeft, 0.01);
+		this.schedule(this.updateLeft);
 		this.addChild(this._larrow);
 
 		//down arrow
@@ -76,7 +85,7 @@ var Day1Layer = cc.Layer.extend({
 			y: size.height+40,
 			scale: 0.8
 		});
-		this.schedule(this.updateDown, 0.03);
+		this.schedule(this.updateDown);
 		this.addChild(this._darrow);
 
 		//right arrow
@@ -86,7 +95,7 @@ var Day1Layer = cc.Layer.extend({
 			y: size.height+40,
 			scale: 0.8
 		});
-		this.schedule(this.updateRight, 0.03);
+		this.schedule(this.updateRight);
 		this.addChild(this._rarrow);
 
 		//keyboard event listener
@@ -96,6 +105,9 @@ var Day1Layer = cc.Layer.extend({
 	        	if (keyCode == 37) {
 	        		key = "LEFT";
 	        		count = 1;
+	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+30){
+	        			console.log("poop");
+	        		}
 	        	}
 	            else if (keyCode == 39) {
 	            	key = "RIGHT";
@@ -120,7 +132,7 @@ var Day1Layer = cc.Layer.extend({
 	            console.log(key);
 	        },
 	        onKeyReleased: function(keyCode, event){
-	        	//set delay (ms)
+	        	//set delay (ms) for desk animation
 	        	setTimeout(function() {
 	        		event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
@@ -134,15 +146,17 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
+	//left arrow update
 	updateLeft:function (dt) {
 		this._larrow.attr({
 			y: this._larrow.y - 5
 		});
-		if (this._larrow.y <= this._abar.y){
+		if (this._larrow.y <= -40){
 			this._larrow.y = cc.winSize.height + 40;
 		}
-			
+
 	},
+	//down arrow update
 	updateDown:function (dt) {
 		this._darrow.attr({
 			y: this._darrow.y - 5
@@ -151,6 +165,7 @@ var Day1Layer = cc.Layer.extend({
 			this._darrow.y = cc.winSize.height + 40;
 		}
 	},
+	//right arrow update
 	updateRight:function (dt) {
 		this._rarrow.attr({
 			y: this._rarrow.y - 5
