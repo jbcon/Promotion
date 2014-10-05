@@ -52,19 +52,9 @@ cc.game.onStart = function(){
     cc.view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.resizeWithBrowserSize(true);
     //load resources
-    //cc.AudioEngine.getInstance().init("mp3,ogg,wav");
-    //cc.Loader.shareLoader().preload([
-    //    {type:"bgm",src:"res/Audio/Cannery"}
-   //]);
     cc.LoaderScene.preload(g_resources, function() {
-        //cc.director.runScene(SysMenu.scene());
-        cc.director.runScene(new NightScene());
+        cc.director.runScene(SysMenu.scene());
+        //cc.director.runScene(new NightScene());
     }, this);
-    
-    //load resources
-    //cc.LoaderScene.preload(g_resources, function () {
-    //    cc.director.runScene(new Day1Scene());
-    //    //cc.director.runScene(new Day2Scene());
-    //}, this);
 };
 cc.game.run();
