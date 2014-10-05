@@ -42,6 +42,7 @@ var Check = cc.Class.extend({
         this.shape.setCollisionType(SpriteTag.check);
         //Sensors only call collision callbacks, and never generate real collisions
         this.shape.setSensor(true);
+
         this.space.addStaticShape(this.shape);
 
         // add sprite to sprite sheet
