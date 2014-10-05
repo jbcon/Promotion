@@ -42,7 +42,7 @@ var Day1Layer = cc.Layer.extend({
 		this._office = cc.Sprite.create(res.office);
 		this._office.attr({
 			x:410,
-			y:320,
+			y:300,
 			scale:0.8
 		});
 		this.addChild(this._office);
@@ -54,7 +54,7 @@ var Day1Layer = cc.Layer.extend({
 		this._sprite = cc.Sprite.create(spriteList[count]);
 		this._sprite.attr({
 			x: size.width / 4,
-			y: size.height / 2,
+			y: 200,
 			scale: 0.35
 		});
 		this.addChild(this._sprite);
@@ -63,7 +63,7 @@ var Day1Layer = cc.Layer.extend({
 		this._abar = cc.Sprite.create(res.arrows);
 		this._abar.attr({
 			x: size.width -175,
-			y: size.height/ 4,
+			y: 50,
 			scale: 0.8
 		});
 		this.addChild(this._abar);
@@ -105,17 +105,26 @@ var Day1Layer = cc.Layer.extend({
 	        	if (keyCode == 37) {
 	        		key = "LEFT";
 	        		count = 1;
-	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+30){
-	        			console.log("poop");
+	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+20){
+	        			console.log("score!");
+	        			event.getCurrentTarget()._larrow.y = size.height + 40;
 	        		}
 	        	}
 	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
+	            	if (event.getCurrentTarget()._rarrow.y<=event.getCurrentTarget()._abar.y+20){
+	        			console.log("score!");
+	        			event.getCurrentTarget()._rarrow.y = size.height + 40;
+	        		}
 				}
 	            else if (keyCode == 40) {
 	            	key = "DOWN";
 	            	count = 2;
+	            	if (event.getCurrentTarget()._darrow.y<=event.getCurrentTarget()._abar.y+20){
+	        			console.log("score!");
+	        			event.getCurrentTarget()._darrow.y = size.height + 40;
+	        		}
 	            }
 	            else count = 0;
 
@@ -124,7 +133,7 @@ var Day1Layer = cc.Layer.extend({
 	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
 				event.getCurrentTarget()._sprite.attr({
 					x: size.width / 4,
-					y: size.height / 2,
+					y: 200,
 					scale: 0.35
 				});
 				event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
@@ -138,7 +147,7 @@ var Day1Layer = cc.Layer.extend({
 	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
 					event.getCurrentTarget()._sprite.attr({
 					x: size.width / 4,
-					y: size.height / 2,
+					y: 200,
 					scale: 0.35
 					});
 					event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
@@ -161,7 +170,7 @@ var Day1Layer = cc.Layer.extend({
 		this._darrow.attr({
 			y: this._darrow.y - 5
 		});
-		if (this._darrow.y <= this._abar.y){
+		if (this._darrow.y <= -40){
 			this._darrow.y = cc.winSize.height + 40;
 		}
 	},
@@ -170,7 +179,7 @@ var Day1Layer = cc.Layer.extend({
 		this._rarrow.attr({
 			y: this._rarrow.y - 5
 		});
-		if (this._rarrow.y <= this._abar.y){
+		if (this._rarrow.y <= -40){
 			this._rarrow.y = cc.winSize.height + 40;
 		}
 	}
