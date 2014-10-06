@@ -1,6 +1,7 @@
 var g_groundHight = 57;
 var g_runnerStartX = 80;
 
+
 // layer type
 if(typeof TagOfLayer == "undefined"){
     var TagOfLayer = {};

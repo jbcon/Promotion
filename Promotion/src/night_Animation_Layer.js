@@ -97,10 +97,10 @@ var AnimationLayer = cc.Layer.extend({
         var animation = cc.Animation.create(animFrames, 0.1);
         this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
         this.runningAction.retain();
-        /*
+        
         animFrames = [];
-        for (var i = 0; i < 4; i++) {
-            var str = "N_Player_Jump_test_" + i + ".png";
+        for (var i = 1; i < 4; i++) {
+            var str = "N_PJump_" + i + ".png";
             var frame = cc.spriteFrameCache.getSpriteFrame(str);
             animFrames.push(frame);
         }
@@ -110,8 +110,8 @@ var AnimationLayer = cc.Layer.extend({
         this.jumpUpAction.retain();
         
         animFrames = [];
-        for (var i = 0; i < 4; i++) {
-            var str = "N_Player_Jump_test_" + i + ".png";
+        for (var i = 4; i < 7; i++) {
+            var str = "N_PJump_" + i + ".png";
             var frame = cc.spriteFrameCache.getSpriteFrame(str);
             animFrames.push(frame);
         }
@@ -120,7 +120,6 @@ var AnimationLayer = cc.Layer.extend({
         this.jumpDownAction = cc.Animate.create(animation);
         this.jumpDownAction.retain();  
     
-    */
     },
     
      update:function (dt) {

@@ -1,10 +1,12 @@
 var res = {
     day1_music : "res/Audio/Cannery.wav",
     desk : "res/images/Day1/D1_Neutral_st.png",
-    menu : "res/images/Day1/menu.png",
+    menu : "res/images/menu.png",
     file : "res/images/Day1/D1_File_st.png",
     shred : "res/images/Day1/D1_Shred_st.png",
     outbox : "res/images/Day1/D1_Outbox_st.png",
+    arrows : "res/images/Day1/arrow.png",
+    office : "res/images/office.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
@@ -19,7 +21,8 @@ var res = {
     
     // Day 2
     day2player_png: "res/images/day2player.png",
-    menu : "res/images/menu.png"
+    menu : "res/images/menu.png",
+    day2bg_png: "res/images/day2bg.png"
 };
 
 var g_resources = [
@@ -38,5 +41,11 @@ var g_resources = [
     res.N_map01_tmx,
     res.N_checks_png,
     res.N_checks_plist,
-	res.day2player_png
+	res.day2player_png,
+    res.arrows,
+    res.office,
+	res.day2player_png,
+	res.day2bg_png
+
 ];
+
