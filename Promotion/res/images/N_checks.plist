@@ -4,109 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>N_check_0.png</key>
+            <key>check.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{434,244}}</string>
+                <string>{{2,2},{52,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
+                <string>{{0,0},{52,38}}</string>
                 <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{438,2},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{874,2},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1310,2},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_4.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,248},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_5.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{438,248},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_6.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{874,248},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
-            </dict>
-            <key>N_check_7.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1310,248},{434,244}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{434,244}}</string>
-                <key>sourceSize</key>
-                <string>{434,244}</string>
+                <string>{52,38}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -116,9 +25,9 @@
             <key>realTextureFileName</key>
             <string>N_checks.png</string>
             <key>size</key>
-            <string>{1746,494}</string>
+            <string>{42,56}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:051ee9e4a08f44f4e95aa7b91b70319f:094a9e369efdc17338da9190269d2427:26645b092bf6a871cd556d3e51b62590$</string>
+            <string>$TexturePacker:SmartUpdate:b2a4feec732570f557d64a0a160f1d5d:5b26efe9729147b3e60df4b602a8c2c7:26645b092bf6a871cd556d3e51b62590$</string>
             <key>textureFileName</key>
             <string>N_checks.png</string>
         </dict>
