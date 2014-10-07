@@ -21,6 +21,7 @@
         "src/night_Background_Layer.js",
         "src/night_Status_Layer.js",
         "src/globals.js",
-        "src/night_check.js"
+        "src/night_check.js",
+        "src/transition.js"
     ]
 }

@@ -77,7 +77,7 @@ var BackgroundLayer = cc.Layer.extend({
         for (var i = 0; i < checkArray.length; i++) {
             var check = new Check(this.spriteSheet,
                 this.space,
-                checkArray[i]["x"] + this.mapWidth * mapIndex);
+                cc.p(checkArray[i]["x"] + this.mapWidth * mapIndex, checkArray[i]["y"]));
             check.mapIndex = mapIndex;
             this.objects.push(check);
         }

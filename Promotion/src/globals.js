@@ -1,5 +1,8 @@
 var g_groundHight = 57;
 var g_runnerStartX = 80;
+var g_score = 0;
+var g_multiplier = 0;
+var g_scene = -1;
 
 
 // layer type
