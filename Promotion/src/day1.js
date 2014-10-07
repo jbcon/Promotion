@@ -100,10 +100,7 @@ var Day1Layer = cc.Layer.extend({
 	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+20){
 	        			console.log("score!");
 	        		}
-/*	            else if (keyCode == 38) {
-	            	key = "UP";
-	            	count = 0;*/
-	            }
+	        	}
 	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
