@@ -102,9 +102,9 @@ var Day1Layer = cc.Layer.extend({
 	        		}
 /*	            else if (keyCode == 38) {
 	            	key = "UP";
-	            	count = 0;
-				}
-*/	            else if (keyCode == 39) {
+	            	count = 0;*/
+	            }
+	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
 	            	if (event.getCurrentTarget()._rarrow.y<=event.getCurrentTarget()._abar.y+20){
@@ -149,7 +149,7 @@ var Day1Layer = cc.Layer.extend({
 	},
 	update:function () {
 		random = Math.floor(Math.random() * 3) + 1;
-	}
+	},
 	//left arrow update
 	updateLeft:function () {
 		leftarray[left].attr({
@@ -178,6 +178,7 @@ var Day1Layer = cc.Layer.extend({
 			//this.removeChild(this._rarrow);
 			this._rarrow.y = cc.winSize.height + 40;
 		}
+	}
 });
 /*
 var Day1Scene = cc.Scene.extend({

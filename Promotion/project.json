@@ -20,6 +20,7 @@
         "src/night_Animation_Layer.js",
         "src/night_Background_Layer.js",
         "src/night_Status_Layer.js",
+        "src/night_end.js",
         "src/globals.js",
         "src/night_check.js"
     ]
