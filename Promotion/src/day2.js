@@ -133,17 +133,14 @@ var Day2Layer = cc.Layer.extend({
 
         if (this.state == RunnerStat.jumpUp) {
             if (vel.y < 0) {
-                this.stat = RunnerStat.jumpDown;
+                this.state = RunnerStat.jumpDown;
             }
         }
         else if (this.state == RunnerStat.jumpDown) {
-            if (vel.y >= 0) {
-                this.stat = RunnerStat.running;
-                vel.y = 0;
+            if (vel.y < 10 && vel.y > -10) {
+                this.state = RunnerStat.running;
             }
         }
-        console.log(vel.y);
-
 	}
 	
 });
