@@ -6,7 +6,7 @@ var res = {
     shred : "res/images/Day1/D1_Shred_st.png",
     outbox : "res/images/Day1/D1_Outbox_st.png",
     arrows : "res/images/Day1/arrow.png",
-    office : "res/images/office.png",
+    office : "res/images/Day1/office.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
