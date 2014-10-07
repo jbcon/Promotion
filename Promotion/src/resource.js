@@ -41,10 +41,8 @@ var g_resources = [
     res.N_map01_tmx,
     res.N_checks_png,
     res.N_checks_plist,
-	res.day2player_png,
     res.arrows,
     res.office,
-	res.day2player_png,
 	res.day2bg_png
 
 ];
