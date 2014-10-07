@@ -6,6 +6,14 @@ var initialGroundHeight = 30;
 var playerStartX = 100;
 var gameSpeed = 400;
 
+//jumping enum
+if(typeof RunnerStat == "undefined") {
+    var RunnerStat = {};
+    RunnerStat.running = 0;
+    RunnerStat.jumpUp = 1;
+    RunnerStat.jumpDown = 2;
+};
+
 
 function Day2Player (space, groundHeight){
 
@@ -18,13 +26,11 @@ function Day2Player (space, groundHeight){
 
 	var contentSize = this.sprite.getContentSize();
 
-
-
 	this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
 	
 
 	//set player start position
-	this.body.setPos(cp.v(playerStartX, 700));
+	this.body.setPos(cp.v(playerStartX, initialGroundHeight+contentSize.height/2));
 	space.addBody(this.body);
 
 	this.body.applyImpulse(cp.v(this.playerSpeed, 0), cp.v(0,0));
@@ -80,6 +86,7 @@ var Day2Layer = cc.Layer.extend({
 	space: null,
 	player: null,
 	keyIsPressed: false,
+	state: RunnerStat.running,
 	ctor: function(space){
 		this._super();
 		this.space = space;
@@ -111,8 +118,10 @@ var Day2Layer = cc.Layer.extend({
 	},
 
 	jump: function(){
-		console.log("TEST");
-	 	this.player.body.applyImpulse(cp.v(0,500), cp.v(0,0));
+		if (this.state == RunnerStat.running){
+		 	this.player.body.applyImpulse(cp.v(0,700), cp.v(0,0));
+		 	this.state = RunnerStat.jumpUp;
+		}
 	},
 
 	getMovementX: function(){
@@ -120,6 +129,20 @@ var Day2Layer = cc.Layer.extend({
 	},
 
 	update: function(dt){
+		var vel = this.player.body.getVel();
+
+        if (this.state == RunnerStat.jumpUp) {
+            if (vel.y < 0) {
+                this.stat = RunnerStat.jumpDown;
+            }
+        }
+        else if (this.state == RunnerStat.jumpDown) {
+            if (vel.y >= 0) {
+                this.stat = RunnerStat.running;
+                vel.y = 0;
+            }
+        }
+        console.log(vel.y);
 
 	}
 	
@@ -167,9 +190,6 @@ var Day2Scene = cc.Scene.extend({
 		var movement = this.layer.getMovementX();
 		this.layer.setPosition(cc.p(-movement, 0));
 
-		console.log(this.bgLayer.getPositionX());
-		console.log(this.bgLayer.map0.width);
-
 		//reposition the backgrounds
 		if (this.bgLayer.getPositionX() < 
 			(1+this.numTimesBgScrolledOffscreen)*-this.bgLayer.map0.width){
@@ -180,7 +200,6 @@ var Day2Scene = cc.Scene.extend({
 				+this.bgLayer.map0.width, this.bgLayer.map1.height/2));
 
 			this.numTimesBgScrolledOffscreen++;
-			console.log("OFFSCREEN");
 
 		}
 
