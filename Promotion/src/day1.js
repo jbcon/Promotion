@@ -21,7 +21,6 @@ var Day1Screen = cc.Layer.extend({
 
 
 var Day1Layer = cc.Layer.extend({
-	_sprite:null,
 	ctor:function () {
 		//super init
 		this._super();
@@ -68,21 +67,26 @@ var Day1Layer = cc.Layer.extend({
 		});
 		this.addChild(this._abar);
 
+		leftarray = [];
+		left = 0;
 		//left arrow
-		this._larrow = cc.Sprite.create(res.arrows, cc.rect(0,0,110,100));
-		this._larrow.attr({
-			x: size.width -295,
-			y: size.height+40,
-			scale: 0.8
-		});
+		for (var i=0; i<10; i++){
+			this._larrow = cc.Sprite.create(res.arrows, cc.rect(0,0,110,100));
+			this._larrow.attr({
+				x: size.width -295,
+				y: cc.winSize.height + 40,
+				scale: 0.8
+			});
+			this.addChild(this._larrow,0,i);
+			leftarray[i] = this._larrow;
+		}
 		this.schedule(this.updateLeft);
-		this.addChild(this._larrow);
 
 		//down arrow
 		this._darrow = cc.Sprite.create(res.arrows, cc.rect(150,0,110,100))
 		this._darrow.attr({
 			x: size.width -175,
-			y: size.height+40,
+			y: cc.winSize.height + 40,
 			scale: 0.8
 		});
 		this.schedule(this.updateDown);
@@ -92,12 +96,12 @@ var Day1Layer = cc.Layer.extend({
 		this._rarrow = cc.Sprite.create(res.arrows, cc.rect(300,0,110,100))
 		this._rarrow.attr({
 			x: size.width -55,
-			y: size.height+40,
+			y: cc.winSize.height + 40,
 			scale: 0.8
 		});
 		this.schedule(this.updateRight);
 		this.addChild(this._rarrow);
-
+	
 		//keyboard event listener
     	cc.eventManager.addListener({
 	        event: cc.EventListener.KEYBOARD,
@@ -107,7 +111,6 @@ var Day1Layer = cc.Layer.extend({
 	        		count = 1;
 	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+20){
 	        			console.log("score!");
-	        			event.getCurrentTarget()._larrow.y = size.height + 40;
 	        		}
 	        	}
 	            else if (keyCode == 39) {
@@ -115,7 +118,6 @@ var Day1Layer = cc.Layer.extend({
 	            	count = 3;
 	            	if (event.getCurrentTarget()._rarrow.y<=event.getCurrentTarget()._abar.y+20){
 	        			console.log("score!");
-	        			event.getCurrentTarget()._rarrow.y = size.height + 40;
 	        		}
 				}
 	            else if (keyCode == 40) {
@@ -123,7 +125,6 @@ var Day1Layer = cc.Layer.extend({
 	            	count = 2;
 	            	if (event.getCurrentTarget()._darrow.y<=event.getCurrentTarget()._abar.y+20){
 	        			console.log("score!");
-	        			event.getCurrentTarget()._darrow.y = size.height + 40;
 	        		}
 	            }
 	            else count = 0;
@@ -155,31 +156,35 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
+	update:function () {
+		random = Math.floor(Math.random() * 3) + 1;
+	}
 	//left arrow update
-	updateLeft:function (dt) {
-		this._larrow.attr({
-			y: this._larrow.y - 5
+	updateLeft:function () {
+		leftarray[left].attr({
+			y: leftarray[left].y - 10
 		});
-		if (this._larrow.y <= -40){
-			this._larrow.y = cc.winSize.height + 40;
+		if (leftarray[left].y <= -40){
+			left+=1;
 		}
-
 	},
 	//down arrow update
-	updateDown:function (dt) {
+	updateDown:function () {
 		this._darrow.attr({
-			y: this._darrow.y - 5
+			y: this._darrow.y - 10
 		});
 		if (this._darrow.y <= -40){
+			//this.removeChild(this._darrow);
 			this._darrow.y = cc.winSize.height + 40;
 		}
 	},
 	//right arrow update
-	updateRight:function (dt) {
+	updateRight:function () {
 		this._rarrow.attr({
-			y: this._rarrow.y - 5
+			y: this._rarrow.y - 10
 		});
 		if (this._rarrow.y <= -40){
+			//this.removeChild(this._rarrow);
 			this._rarrow.y = cc.winSize.height + 40;
 		}
 	}
