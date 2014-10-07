@@ -20,7 +20,7 @@ var res = {
     N_checks_plist : "res/images/N_checks.plist",
     
     // Day 2
-    D2_run_f1_png: "res/images/Day2/D2_run_f1",
+    D2_run_f1_png: "res/images/Day2/D2_run_f1.png",
     menu : "res/images/menu.png",
     day2bg_png: "res/images/Day2/day2bg.png"
 };
@@ -43,7 +43,7 @@ var g_resources = [
     res.N_checks_plist,
     res.arrows,
     res.office,
-	res.day2bg_png
-
+	res.day2bg_png,
+    res.D2_run_f1_png
 ];
 
