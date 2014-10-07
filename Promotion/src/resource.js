@@ -20,9 +20,9 @@ var res = {
     N_checks_plist : "res/images/N_checks.plist",
     
     // Day 2
-    day2player_png: "res/images/day2player.png",
+    D2_run_f1_png: "res/images/Day2/D2_run_f1",
     menu : "res/images/menu.png",
-    day2bg_png: "res/images/day2bg.png"
+    day2bg_png: "res/images/Day2/day2bg.png"
 };
 
 var g_resources = [

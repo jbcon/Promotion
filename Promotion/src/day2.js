@@ -7,7 +7,7 @@ var playerStartX = 100;
 
 function Day2Player (space, groundHeight){
 
-	this.sprite = new cc.PhysicsSprite(res.day2player_png);
+	this.sprite = new cc.PhysicsSprite(res.D2_run_f1_png);
 	var contentSize = this.sprite.getContentSize();
 	this.playerSpeed = 50;
 
