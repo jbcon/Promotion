@@ -20,13 +20,16 @@ var Check = cc.Class.extend({
 
         this.sprite = cc.PhysicsSprite.createWithSpriteFrameName("#check.png");
         var body = new cp.StaticBody();
-        body.setPos(cc.p(pos, this.sprite.getContentSize().height / 2 + g_groundHight));
+        body.setPos(pos);
         this.sprite.setBody(body);
 
         this.shape = new cp.BoxShape(body,
             this.sprite.getContentSize().width,
             this.sprite.getContentSize().height);
         this.shape.setCollisionType(SpriteTag.check);
+
+        //Sensors only call collision callbacks, and never generate real collisions
+        this.shape.setSensor(true);
 
         this.space.addStaticShape(this.shape);
         spriteSheet.addChild(this.sprite);
