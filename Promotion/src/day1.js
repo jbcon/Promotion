@@ -24,9 +24,6 @@ var Day1Layer = cc.Layer.extend({
 	ctor:function () {
 		//super init
 		this._super();
-		this.init();
-	},
-	init:function () {
 		
 		//get window size
 		var size = cc.winSize;
@@ -37,23 +34,14 @@ var Day1Layer = cc.Layer.extend({
 		cc.audioEngine.setMusicVolume(0.8);
 		cc.audioEngine.playMusic(res.day1_music);
 
-		//background
-		this._office = cc.Sprite.create(res.office);
-		this._office.attr({
-			x:410,
-			y:300,
-			scale:0.8
-		});
-		this.addChild(this._office);
-
 		//sprite array
 		spriteList = [res.desk, res.outbox, res.shred, res.file];
 
 		//sprite init
 		this._sprite = cc.Sprite.create(spriteList[count]);
 		this._sprite.attr({
-			x: size.width / 4,
-			y: 200,
+			x: size.width / 3,
+			y: size.height / 2,
 			scale: 0.35
 		});
 		this.addChild(this._sprite);
@@ -112,8 +100,11 @@ var Day1Layer = cc.Layer.extend({
 	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+20){
 	        			console.log("score!");
 	        		}
-	        	}
-	            else if (keyCode == 39) {
+/*	            else if (keyCode == 38) {
+	            	key = "UP";
+	            	count = 0;
+				}
+*/	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
 	            	if (event.getCurrentTarget()._rarrow.y<=event.getCurrentTarget()._abar.y+20){
@@ -133,8 +124,8 @@ var Day1Layer = cc.Layer.extend({
 	            event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
 				event.getCurrentTarget()._sprite.attr({
-					x: size.width / 4,
-					y: 200,
+					x: size.width / 3,
+					y: size.height / 2,
 					scale: 0.35
 				});
 				event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
@@ -142,17 +133,17 @@ var Day1Layer = cc.Layer.extend({
 	            console.log(key);
 	        },
 	        onKeyReleased: function(keyCode, event){
-	        	//set delay (ms) for desk animation
+	        	//set delay (ms)
 	        	setTimeout(function() {
 	        		event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
 					event.getCurrentTarget()._sprite.attr({
-					x: size.width / 4,
-					y: 200,
+					x: size.width / 3,
+					y: size.height / 2,
 					scale: 0.35
 					});
 					event.getCurrentTarget().addChild(event.getCurrentTarget()._sprite);
-	        	}, 80);	        
+	        	}, 500);	        
 	        }
     	}, this); 
 	},
@@ -187,5 +178,15 @@ var Day1Layer = cc.Layer.extend({
 			//this.removeChild(this._rarrow);
 			this._rarrow.y = cc.winSize.height + 40;
 		}
+});
+/*
+var Day1Scene = cc.Scene.extend({
+	onEnter:function(){
+		this._super();
+		var scene = new cc.Scene();
+		scene.addChild(new Day1Layer());
+		scene.addChild(new Day1Screen());
+		cc.director.runScene(new cc.TransitionFade(1.2, scene));
 	}
 });
+*/

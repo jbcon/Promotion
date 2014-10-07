@@ -21,7 +21,8 @@ var res = {
     
     // Day 2
     day2player_png: "res/images/day2player.png",
-    menu : "res/images/menu.png"
+    menu : "res/images/menu.png",
+    day2bg_png: "res/images/day2bg.png"
 };
 
 var g_resources = [
@@ -42,6 +43,9 @@ var g_resources = [
     res.N_checks_plist,
 	res.day2player_png,
     res.arrows,
-    res.office
+    res.office,
+	res.day2player_png,
+	res.day2bg_png
+
 ];
 

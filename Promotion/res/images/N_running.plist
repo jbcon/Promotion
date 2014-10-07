@@ -4,10 +4,88 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>N_PJump_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{85,85},{37,79}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{37,79}}</string>
+                <key>sourceSize</key>
+                <string>{37,79}</string>
+            </dict>
+            <key>N_PJump_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{102,2},{43,81}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{43,81}}</string>
+                <key>sourceSize</key>
+                <string>{43,81}</string>
+            </dict>
+            <key>N_PJump_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{147,2},{43,80}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{43,80}}</string>
+                <key>sourceSize</key>
+                <string>{43,80}</string>
+            </dict>
+            <key>N_PJump_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{430,60},{46,77}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{46,77}}</string>
+                <key>sourceSize</key>
+                <string>{46,77}</string>
+            </dict>
+            <key>N_PJump_5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{350,82},{44,78}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{44,78}}</string>
+                <key>sourceSize</key>
+                <string>{44,78}</string>
+            </dict>
+            <key>N_PJump_6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{301,2},{47,79}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{47,79}}</string>
+                <key>sourceSize</key>
+                <string>{47,79}</string>
+            </dict>
             <key>N_Player_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{56,79}}</string>
+                <string>{{192,2},{56,79}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +98,7 @@
             <key>N_Player_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,325},{49,79}}</string>
+                <string>{{250,2},{49,79}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,11 +111,11 @@
             <key>N_Player_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,489},{42,79}}</string>
+                <string>{{166,84},{42,79}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{42,79}}</string>
                 <key>sourceSize</key>
@@ -46,7 +124,7 @@
             <key>N_Player_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,242},{49,81}}</string>
+                <string>{{2,2},{49,81}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,11 +137,11 @@
             <key>N_Player_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,83},{56,77}}</string>
+                <string>{{430,2},{56,77}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{56,77}}</string>
                 <key>sourceSize</key>
@@ -72,7 +150,7 @@
             <key>N_Player_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,162},{51,78}}</string>
+                <string>{{350,2},{51,78}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,11 +163,11 @@
             <key>N_Player_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,570},{41,81}}</string>
+                <string>{{2,85},{41,81}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{41,81}}</string>
                 <key>sourceSize</key>
@@ -98,7 +176,7 @@
             <key>N_Player_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,406},{47,81}}</string>
+                <string>{{53,2},{47,81}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -116,9 +194,9 @@
             <key>realTextureFileName</key>
             <string>N_running.png</string>
             <key>size</key>
-            <string>{60,653}</string>
+            <string>{509,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e69a2c61af0f4be2423b93326eb81468:a844140fb5a2412b6a76dc3d28dd4dfa:9a58a45dcde351405eb76b38ad3bf3a3$</string>
+            <string>$TexturePacker:SmartUpdate:c5e868b9c1380cde74803c3ca9c46a0c:3d174555ba583a0219ea1f94633a2f5a:9a58a45dcde351405eb76b38ad3bf3a3$</string>
             <key>textureFileName</key>
             <string>N_running.png</string>
         </dict>
