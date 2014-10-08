@@ -1,4 +1,3 @@
-
 var NightScene = cc.Scene.extend({
     space:null, // space
     gameLayer:null, // gamelayer that inculde background, animation layer
@@ -58,14 +57,15 @@ var NightScene = cc.Scene.extend({
         this.shapesToRemove = [];
         
         this.timer +=1;
-        if(this.timer == 10000){
-            this.gameOver();
+        if(this.timer == 100){
+            //this.gameOver();
         }
     },
     
     gameOver:function(){
         cc.log("==game over");
-        var scene = new Day2Scene();
+        g_scene = 2;
+        var scene = new TransitionScene();
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }
 });
