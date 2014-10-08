@@ -1,4 +1,4 @@
-Kiss-Ass: The Promotioning
+Suck-Up: The Promotioning
 =========
 A Five-Fourths Production:
   * Devin Comeau
