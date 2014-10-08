@@ -210,10 +210,10 @@ var Day2Layer = cc.Layer.extend({
             }
         }
         if (this.state == RunnerStat.sliding){
-        	score += 2;
+        	g_score += 2;
         }
         else{
-        	score++;
+        	g_score++;
         }
 
 
@@ -358,7 +358,7 @@ var Day2Scene = cc.Scene.extend({
 
 		this.bgLayer.setPosition(cc.p(-movement,0));
 
-        this.scoreText.setString("Score: " + score);
+        this.scoreText.setString("Score: " + g_score);
 
 	},
 
