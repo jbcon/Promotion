@@ -3,7 +3,7 @@ Suck-Up: The Promotioning
 A Five-Fourths Production:
   * Devin Comeau
   * John Conover
-  * Chia-Ming "Tim" Huang
+  * Chi-Ning "Tim" Huang
   * Julius Lee
   * Bobby Parker
 
