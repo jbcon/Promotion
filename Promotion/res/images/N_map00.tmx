@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="N_map" tilewidth="32" tileheight="32">
-  <image source="N_map.png" width="128" height="128"/>
+ <tileset firstgid="1" name="DreamBG" tilewidth="32" tileheight="32">
+  <image source="DreamBG.png" width="1024" height="768"/>
  </tileset>
  <layer name="Background" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBzFo3gIYm46YC4ohtnJB8UwPqnyzFgwPewYxSMP0yN/DLQfhxIGABYBBkg=
+   eJyN0klXj2EcBuB/rQgZIvoG5qiET4BmISzNoUnmpbkyT2FpzhCF0CcQQiTDNzAlVIad6z3nXb2n/6nFtfo9577vxbMgFostZBE55JFPAYUUsZhilrCUZZSwnBWsjGTkRnI2UMpGNlFGORVUUsUWqtnKNrazg53sYnckY3Mk5xA11FLHEY5yjOOc4CSnOM0ZzlLPOc5zIZJxOJJznQZucJPbNHKHuzTRzD3u84AWHvKIx7RGMm5Fcp7QxlOe0c4LXvKKDl7zhk7e0sU73vOBj5GM55GcpIRYbAQjGUUyo0M97j/4yS966aOf3/zhL//4xGe+8JVvdPOdqbKmMZ0ZzCQ9FPSMYSzjSGE8E0hlIpNIYxjDEwbenEMueeRTQGEo6JnFbDLIJIs5ZDOXecxnMlMSBt68ic2UUU4FlaGgp4jFFLOEpSyjhOWsYCULWRRncx2HOcJRjnE8FPRUsYVqtrKN7exgJ7vYTSkb42y+yS1u08gd7oaCnhOc5BSnOcNZ6jnHeS5QQ22czc94TjsveMmrUNDTRDP3uM8DWnjIIx7TSgM34mz+wle+0c13ekJBTweveUMnb+niHe/5wEfaeBpnc1Kiv8ZIRpHM6FDQ84Of/KKXPvr5zR/+8o9PfI6zeaqsaUxnBjNJDwU9YxjLOFIYzwRSmcgk0hjG8MSBN+eQSx75FFAYCnpmMZsMMsliDtnMZR7zmcyUxIE3r2I1a1jLOtazgdIh3gd7s4e97GM/BzjIIWqGeB/szUUucZkrXOUa12kY4n2wN/8B6m/rEw==
   </data>
  </layer>
  <objectgroup name="check">
