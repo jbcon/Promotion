@@ -33,9 +33,6 @@ function Day2Player (space, groundHeight){
 	this.sprite.runAction(this.runningAction);
 	this.playerSpeed = gameSpeed;
 
-	this.sprite.attr({
-		scale: 0.25
-	});
 
 	var contentSize = this.sprite.getContentSize();
 
