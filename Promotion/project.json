@@ -24,6 +24,8 @@
         "src/globals.js",
         "src/night_check.js",
         "src/transition.js",
-        "src/day3.js"
+        "src/day3.js",
+        "src/D3_boss_Layer.js",
+        "src/D3_bubble_Layer.js"
     ]
 }
