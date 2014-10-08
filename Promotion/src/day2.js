@@ -5,6 +5,8 @@ var initialGroundHeight = 50;
 //player start position
 var playerStartX = 100;
 var gameSpeed = 700;
+//game length in seconds
+var gameTime = 120;
 
 //jumping enum
 if(typeof RunnerStat == "undefined") {
@@ -27,7 +29,7 @@ function Day2Player (space, groundHeight){
 		animFrames.push(frame);
 	}
 
-	var animation = cc.Animation.create(animFrames, 0.05);
+	var animation = cc.Animation.create(animFrames, 0.06);
 	this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
 	this.sprite = new cc.PhysicsSprite("#D2_run_f1.png");
 	this.sprite.runAction(this.runningAction);
@@ -97,6 +99,7 @@ var Day2Layer = cc.Layer.extend({
 	player: null,
 	keyIsPressed: false,
 	state: RunnerStat.running,
+	obstacle_array: [],
 	ctor: function(space){
 		this._super();
 		this.space = space;
@@ -104,6 +107,7 @@ var Day2Layer = cc.Layer.extend({
 		var size = cc.winSize;
 		this.scheduleUpdate();
 		this.addChild(this.player.sprite);
+		this.populate_obstacles();
 		//if space was pressed
  		var listener = cc.EventListener.create({
 			event: cc.EventListener.KEYBOARD,
@@ -129,7 +133,7 @@ var Day2Layer = cc.Layer.extend({
 
 	jump: function(){
 		if (this.state == RunnerStat.running){
-		 	this.player.body.applyImpulse(cp.v(0,700), cp.v(0,0));
+		 	this.player.body.applyImpulse(cp.v(0,1800), cp.v(0,0));
 		 	this.state = RunnerStat.jumpUp;
 		}
 	},
@@ -147,10 +151,63 @@ var Day2Layer = cc.Layer.extend({
             }
         }
         else if (this.state == RunnerStat.jumpDown) {
-            if (vel.y < 10 && vel.y > -10) {
+            if (vel.y < 20 && vel.y > -20) {
                 this.state = RunnerStat.running;
             }
         }
+	},
+
+	//preload the randomly generated obstacles
+	populate_obstacles: function(){
+		var cabinet = res.filingcabinet_png;
+		var trash = res.trash_png;
+
+		//odds that an object will spawn in that location
+		var spawnChance = .5;
+
+		//odds that two objects spawn next to each other
+		var adjChance = .1
+		
+
+		//width of whole level
+		var gameWidth = gameSpeed*gameTime
+
+		var tempCab = new cc.Sprite(res.filingcabinet_png);
+		var tempTrash = new cc.Sprite(res.trash_png);
+
+		var cabWidth = tempCab.getContentSize().width;
+		var trashWidth = tempTrash.getContentSize().width;
+
+		//used to iterate over the span of the level
+		var iter = cc.winSize.width;
+		for (; iter < gameWidth; iter += Math.max(cabWidth, trashWidth) * 8){
+			var result = Math.random();
+			if (result <= spawnChance){
+				//if result is less than half the spawn chance,
+				//spawn a cabinet
+				if (result > spawnChance / 2){
+					var newObs = new Obstacle(res.filingcabinet_png,
+						this.space, iter,tempCab.getContentSize().height/2);
+					this.addChild(newObs);
+					this.obstacle_array.push(newObs);
+					console.log("CABINET");
+				}
+				//otherwise, make a trash can
+				else if (result < spawnChance / 2){
+					var newObs = new Obstacle(res.trash,
+						this.space, iter,tempTrash.getContentSize().height/2);
+					this.addChild(newObs);
+					this.obstacle_array.push(newObs);
+					console.log("TRASH");
+				}
+				
+			}
+			spawnChance += .01;
+		}
+
+
+
+
 	}
 	
 });
@@ -158,7 +215,9 @@ var Day2Layer = cc.Layer.extend({
 var Day2Scene = cc.Scene.extend({
 	space: null,
 	groundHeight: initialGroundHeight,
-	groundWidth: 1000000,
+
+	//make ground minimum length to complete game in time allotted
+	groundWidth: gameSpeed*gameTime,
 	layer: null,
 	bgLayer: null,
 
@@ -176,7 +235,7 @@ var Day2Scene = cc.Scene.extend({
 	initPhysics: function(){
 
 		this.space = new cp.Space();
-		this.space.gravity = cp.v(0,-2000);
+		this.space.gravity = cp.v(0,-7000);
 		this.setGroundHeight();
 	},
 
@@ -200,6 +259,11 @@ var Day2Scene = cc.Scene.extend({
 		//reposition the backgrounds
 		if (this.bgLayer.getPositionX() < 
 			(1+this.numTimesBgScrolledOffscreen)*-this.bgLayer.map0.width){
+
+			/* make the visible map map0
+				and the one that just left map1,
+				and put map1 back behind map0.
+			*/
 			var tempMap = this.bgLayer.map0;
 			this.bgLayer.map0 = this.bgLayer.map1;
 			this.bgLayer.map1 = tempMap;

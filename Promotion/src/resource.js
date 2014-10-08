@@ -25,6 +25,9 @@ var res = {
     day2bg_png: "res/images/Day2/day2bg.png",
     D2_run_png: "res/images/Day2/D2_run.png",
     D2_run_plist: "res/images/Day2/D2_run.plist",
+    filingcabinet_png: "res/images/Day2/filingcabinet.png",
+    desk_png: "res/images/Day2/desk.png",
+    trash_png: "res/images/Day2/trash.png",
     
     // Day 3
     D3_bg_png: "res/images/Day3/D3_DaBoss_st.png"
@@ -52,6 +55,8 @@ var g_resources = [
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
+    res.filingcabinet_png,
+    res.desk_png,
+    res.trash_png,
     res.D3_bg_png
 ];
-
