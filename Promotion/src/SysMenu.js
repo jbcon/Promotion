@@ -7,6 +7,7 @@ var SysMenu = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 
+		//Create title screen
 		var title = new cc.LabelTTF("KISS-ASS", "Arial", 175);
 		title.x = size.width / 2;
 		title.y = size.height / 1.5;
@@ -16,7 +17,8 @@ var SysMenu = cc.Layer.extend({
 		label.x = size.width / 2;
 		label.y = 100;
 		this.addChild(label);
-/*
+/*		
+		//For testing purposes only
 		//day1 sprite from menu sprite sheet
 		var Day1Normal = new cc.Sprite(res.menu, cc.rect(0,0,126,33));
 		var Day1Selected = new cc.Sprite(res.menu, cc.rect(0,33,126,33));
@@ -52,6 +54,7 @@ var SysMenu = cc.Layer.extend({
 	    }, this);
 	        	
 	},
+	//run intro screen when ready
 	Introduction:function () {
 		var scene = new cc.Scene();
 		scene.addChild(new Intro());

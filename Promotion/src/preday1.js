@@ -1,3 +1,4 @@
+//for instructions
 var PreDay1 = cc.Layer.extend({
 	ctor:function () {
 		this._super();
@@ -7,6 +8,7 @@ var PreDay1 = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 
+		//create labels to go on screen
 		var day1 = new cc.LabelTTF("Day 1", "Arial", 40);
 		day1.x = size.width / 2;
 		day1.y = size.height / 1.5;
@@ -36,6 +38,7 @@ var PreDay1 = cc.Layer.extend({
 	}
 });
 
+//for the intro to the game aka promotion available
 var Intro = cc.Layer.extend({
 	ctor:function () {
 		this._super();
@@ -45,6 +48,7 @@ var Intro = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 
+		//email background
 		var email = cc.Sprite.create(res.email);
 		email.x = 400;
 		email.y = 400;
@@ -52,14 +56,17 @@ var Intro = cc.Layer.extend({
 
 		//this.removeChild(email);
 
+		//create labels to go on screen
 		var label1 = new cc.LabelTTF("A NEW OPENENING?!", "Arial", 40);
 		label1.x = size.width / 2;
 		label1.y = size.height / 1.5;
+		label1.setColor((0,0,0));
 		this.addChild(label1);
 
 		var label2 = new cc.LabelTTF("AND ONLY 3 DAYS TO \n IMPRESS THE BOSS?", "Arial", 40);
 		label2.x = size.width / 2;
-		label2.y = size.height / 2;
+		label2.y = size.height / 3;
+		label2.setColor((0,0,0));
 		this.addChild(label2);
 
 		var start = new cc.LabelTTF("[PRESS START]", "Arial", 40);
