@@ -1,50 +1,42 @@
 var Day3Layer = cc.Layer.extend({
     keyArray: [65,66,67],
+    size: 0,
     ki: 0,
-    target:null,
+    count: 0, // 0 = normal, 1 = happy, 2 = angry
+    bossX: 3,
+    bossY: 300,
+    bossScale: 0.50,
         
     ctor:function () {
-    
         this._super();
         this.init();
-        
         return true;
     },
     
     init:function () {
-        var size = cc.winSize;
+        size = cc.winSize;
         
         // add background
         this.bg = new cc.Sprite(res.D3_bg_png);
         this.bg.attr({
             x: size.width / 2,
             y: size.height / 2,
+            scale:0.8
         });
         this.addChild(this.bg, 0);
-        
-        //keyboard event listener
-    	cc.eventManager.addListener({
-	        event: cc.EventListener.KEYBOARD,
-            onKeyPressed: function(keyCode, event){
-                var tmp = event.getCurrentTarget().keyArray[event.getCurrentTarget().ki];
-                    if(keyCode == tmp){
-                        cc.log("Correct!");
-                        event.getCurrentTarget().ki +=1;
-                    }
-	        },
-	        onKeyReleased: function(keyCode, event){
-            
-	        }
-    	}, this); 
-	},
-    
+    }
 });
 
 var Day3Scene = cc.Scene.extend({
-    onEnter:function () {
+    gameLayer: null,
+    
+    onEnter:function () {        
         this._super();
-        var layer = new Day3Layer();
-        this.addChild(layer);
+        this.gameLayer = cc.Layer.create(); // create game layer (layer that include background, and animation layer
+        this.gameLayer.addChild(new Day3Layer());
+        this.gameLayer.addChild(new Day3BossLayer()); // add background layer
+        this.gameLayer.addChild(new Day3BubbleLayer());
+        this.addChild(this.gameLayer);
     }
 });
 

@@ -35,7 +35,7 @@ var Day1Layer = cc.Layer.extend({
 		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
-		cc.audioEngine.playMusic(res.day1_music);
+		cc.audioEngine.playMusic(res.day1_music, true);
 
 		//background
 		this._office = cc.Sprite.create(res.office);
@@ -217,6 +217,9 @@ var Day1Layer = cc.Layer.extend({
 			if (downarray[i].y == -40) lives--;
 			if (rightarray[i].y == -40) lives--;
 		};
-		if (lives <= 0) console.log("GG");
+		if (lives <= 0) {
+			console.log("GG");
+			g_scene = 1;
+		}
 	}
 });
