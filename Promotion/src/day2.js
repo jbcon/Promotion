@@ -210,10 +210,10 @@ var Day2Layer = cc.Layer.extend({
             }
         }
         if (this.state == RunnerStat.sliding){
-        	day2Score += 2;
+        	g_score += 2;
         }
         else{
-        	day2Score++;
+        	g_score++;
         }
 
 
@@ -348,7 +348,7 @@ var Day2Scene = cc.Scene.extend({
 			this.numTimesBgScrolledOffscreen++;
 
 		}
-		if (-this.layer.position >= this.groundWidth){
+		if (-movement >= this.groundWidth){
 			this.gameOver(true);
 		}
 		else if (this.layer.player.sprite.body.getVel().x <= 0){
@@ -358,7 +358,7 @@ var Day2Scene = cc.Scene.extend({
 
 		this.bgLayer.setPosition(cc.p(-movement,0));
 
-        this.scoreText.setString("Score: " + day2Score);
+        this.scoreText.setString("Score: " + g_score);
 
 	},
 
