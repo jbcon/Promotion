@@ -48,9 +48,6 @@
  */
 
 
-//Sabre Dance: copyright Khachaturian
-//Living in the Sunlight: copyright Tiny Tim
-
 cc.game.onStart = function(){
     cc.view.adjustViewPort(true);
     cc.view.setDesignResolutionSize(800, 600, cc.ResolutionPolicy.SHOW_ALL);
