@@ -22,6 +22,6 @@ Day 3:
   * When the boss is done speaking, repeat what he says by typing the first letter of each word in the given order ("Simon")
 
 Music:
- * Sabre Dance: copyright Khachaturian
+ * Sabre Dance: copyright Aram Khachaturian
  * Living in the Sunlight: copyright Tiny Tim
  * The Cannery: copyright Kevin MacLeod
