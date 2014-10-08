@@ -8,7 +8,7 @@ var gameSpeed = 700;
 //game length in seconds
 var gameTime = 60;
 
-var score = 0;
+var day2Score = 0;
 
 //jumping enum
 if(typeof RunnerStat == "undefined") {
@@ -348,7 +348,7 @@ var Day2Scene = cc.Scene.extend({
 			this.numTimesBgScrolledOffscreen++;
 
 		}
-		if (-this.layer.position >= this.groundWidth){
+		if (-movement >= this.groundWidth){
 			this.gameOver(true);
 		}
 		else if (this.layer.player.sprite.body.getVel().x <= 0){

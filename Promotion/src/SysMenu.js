@@ -8,10 +8,15 @@ var SysMenu = cc.Layer.extend({
 		var size = cc.winSize;
 
 		//Create title screen
-		var title = new cc.LabelTTF("KISS-ASS", "Arial", 175);
+		var title = new cc.LabelTTF("KISS-ASS:", "Arial", 170);
 		title.x = size.width / 2;
 		title.y = size.height / 1.5;
 		this.addChild(title);
+
+		var title2 = new cc.LabelTTF("THE PROMOTION", "Arial", 90);
+		title2.x = size.width / 2;
+		title2.y = size.height / 2.2;
+		this.addChild(title2);
 
 		var label = new cc.LabelTTF("[PRESS START]", "Arial", 40);
 		label.x = size.width / 2;
