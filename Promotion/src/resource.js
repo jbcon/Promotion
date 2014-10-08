@@ -44,7 +44,7 @@ var res = {
     D3_boss_81_png: "res/images/Day3/81b.png",
     D3_boss_83_png: "res/images/Day3/83b.png",
     D3_boss_84_png: "res/images/Day3/84b.png",
-    D3_boss_85_png: "res/images/Day3/85b.png",
+    D3_boss_85_png: "res/images/Day3/85b.png"
 };
 
 var g_resources = [
@@ -73,12 +73,10 @@ var g_resources = [
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
-<<<<<<< HEAD
     res.filingcabinet_png,
     res.desk_png,
     res.trash_png,
-    res.D3_bg_png
-=======
+    res.D3_bg_png,
     res.D3_boss_65_png,
     res.D3_boss_66_png,
     res.D3_boss_68_png,
@@ -90,5 +88,4 @@ var g_resources = [
     res.D3_boss_83_png,
     res.D3_boss_84_png,
     res.D3_boss_85_png,
->>>>>>> 55d7e8a9973dce58c9bf674f91dcc25214a62e8f
 ];
