@@ -7,6 +7,15 @@ var SysMenu = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 
+		//email background
+		this.bg = cc.Sprite.create(res.email);
+		this.bg.attr({
+			x:405,
+			y:300,
+			scale: 0.8
+		});
+		this.addChild(this.bg);
+
 		//day1 sprite from menu sprite sheet
 		var Day1Normal = new cc.Sprite(res.menu, cc.rect(0,0,126,33));
 		var Day1Selected = new cc.Sprite(res.menu, cc.rect(0,33,126,33));
