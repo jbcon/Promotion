@@ -58,7 +58,7 @@ var NightScene = cc.Scene.extend({
         
         this.timer +=1;
         if(this.timer == 100){
-            this.gameOver();
+            //this.gameOver();
         }
     },
     

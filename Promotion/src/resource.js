@@ -20,9 +20,11 @@ var res = {
     N_checks_plist : "res/images/N_checks.plist",
     
     // Day 2
-    D2_run_f1_png: "res/images/Day2/D2_run_f1",
+    D2_run_f1_png: "res/images/Day2/D2_run_f1.png",
     menu : "res/images/menu.png",
     day2bg_png: "res/images/Day2/day2bg.png",
+    D2_run_png: "res/images/Day2/D2_run.png",
+    D2_run_plist: "res/images/Day2/D2_run.plist",
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
@@ -54,5 +56,8 @@ var g_resources = [
     res.D3_boss_normal_png,
     res.D3_boss_happy_png,
     res.D3_boss_angry_png,
+    res.D2_run_f1_png,
+    res.D2_run_png,
+    res.D2_run_plist,
 ];
 
