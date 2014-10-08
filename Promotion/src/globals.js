@@ -11,6 +11,7 @@ if(typeof TagOfLayer == "undefined"){
     TagOfLayer.background = 0;
     TagOfLayer.Animation = 1;
     TagOfLayer.Status = 2;
+    TagOfLayer.D3Boss = 4;
 };
 
 // collision type for chipmunk

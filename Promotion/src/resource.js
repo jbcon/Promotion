@@ -7,6 +7,7 @@ var res = {
     outbox : "res/images/Day1/D1_Outbox_st.png",
     arrows : "res/images/Day1/arrow.png",
     office : "res/images/Day1/office.png",
+    email : "res/images/email.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
@@ -29,9 +30,14 @@ var res = {
     D2_jump_plist: "res/images/Day2/D2_jump.plist",
     D2_jump_f1_png: "res/images/Day2/D2_jump_f1.png",
     D2_jump_f2_png: "res/images/Day2/D2_jump_f2.png",
+    D2_slide_png: "res/images/Day2/D2_slide.png",
+    D2_slide_plist: "res/images/Day2/D2_slide.plist",
     filingcabinet_png: "res/images/Day2/filingcabinet.png",
     desk_png: "res/images/Day2/desk.png",
     trash_png: "res/images/Day2/trash.png",
+    coffee_wav: "res/Audio/coffee.wav",
+    yum_wav: "res/Audio/yum.wav",
+    spill_wav: "res/Audio/spill.wav",
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
@@ -49,6 +55,7 @@ var res = {
     D3_boss_83_png: "res/images/Day3/83b.png",
     D3_boss_84_png: "res/images/Day3/84b.png",
     D3_boss_85_png: "res/images/Day3/85b.png"
+
 };
 
 var g_resources = [
@@ -79,11 +86,14 @@ var g_resources = [
     res.D2_run_plist,
     res.D2_jump_png,
     res.D2_jump_plist,
-    res.D2_jump_f1_png,
-    res.D2_jump_f2_png,
+    res.D2_slide_png,
+    res.D2_slide_plist,
     res.filingcabinet_png,
     res.desk_png,
     res.trash_png,
+    res.coffee_wav,
+    res.yum_wav,
+    res.spill_wav,
     res.D3_bg_png,
     res.D3_boss_65_png,
     res.D3_boss_66_png,
