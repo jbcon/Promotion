@@ -7,80 +7,80 @@
             <key>D2_run_f1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{389,2},{129,233}}</string>
+                <string>{{949,2},{523,944}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{129,233}}</string>
+                <string>{{0,0},{523,944}}</string>
                 <key>sourceSize</key>
-                <string>{129,233}</string>
+                <string>{523,944}</string>
             </dict>
             <key>D2_run_f2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{624,2},{91,225}}</string>
+                <string>{{962,948},{365,912}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{91,225}}</string>
+                <string>{{0,0},{365,912}}</string>
                 <key>sourceSize</key>
-                <string>{91,225}</string>
+                <string>{365,912}</string>
             </dict>
             <key>D2_run_f3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,2},{152,229}}</string>
+                <string>{{2,476},{618,929}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{152,229}}</string>
+                <string>{{0,0},{618,929}}</string>
                 <key>sourceSize</key>
-                <string>{152,229}</string>
+                <string>{618,929}</string>
             </dict>
             <key>D2_run_f4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{389,133},{117,233}}</string>
+                <string>{{2,2},{472,945}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{117,233}}</string>
+                <string>{{0,0},{472,945}}</string>
                 <key>sourceSize</key>
-                <string>{117,233}</string>
+                <string>{472,945}</string>
             </dict>
             <key>D2_run_f5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,156},{83,226}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{83,226}}</string>
-                <key>sourceSize</key>
-                <string>{83,226}</string>
-            </dict>
-            <key>D2_run_f6.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{154,228}}</string>
+                <string>{{627,1096},{333,915}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{154,228}}</string>
+                <string>{{0,0},{333,915}}</string>
                 <key>sourceSize</key>
-                <string>{154,228}</string>
+                <string>{333,915}</string>
+            </dict>
+            <key>D2_run_f6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1096},{623,924}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{623,924}}</string>
+                <key>sourceSize</key>
+                <string>{623,924}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -90,9 +90,13 @@
             <key>realTextureFileName</key>
             <string>D2_run.png</string>
             <key>size</key>
-            <string>{717,252}</string>
+            <string>{1474,2022}</string>
             <key>smartupdate</key>
+<<<<<<< HEAD
             <string>$TexturePacker:SmartUpdate:9e4571769f12657d0e619bcecba37d64:b33ca2e255f238b08cc722347d5db680:1883a93bba71c49caea2c94fe0abd89b$</string>
+=======
+            <string>$TexturePacker:SmartUpdate:8063f748deccdcf8971f7fbca34def8e:ba7f988902375a5706c6357b654e687e:1883a93bba71c49caea2c94fe0abd89b$</string>
+>>>>>>> 55d7e8a9973dce58c9bf674f91dcc25214a62e8f
             <key>textureFileName</key>
             <string>D2_run.png</string>
         </dict>

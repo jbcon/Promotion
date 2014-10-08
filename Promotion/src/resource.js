@@ -14,7 +14,7 @@ var res = {
     N_runner_png : "res/images/N_running.png",
     N_runner_plist : "res/images/N_running.plist",
     N_map_png : "res/images/DreamBG.png",
-    N_map00_tmx : "res/images/N_map00.tmx",
+    N_map00_tmx : "res/images/N_map02.tmx",
     N_map01_tmx : "res/images/N_map01.tmx",
     N_checks_png : "res/images/N_checks.png",
     N_checks_plist : "res/images/N_checks.plist",
@@ -30,7 +30,21 @@ var res = {
     trash_png: "res/images/Day2/trash.png",
     
     // Day 3
-    D3_bg_png: "res/images/Day3/D3_DaBoss_st.png"
+    D3_bg_png: "res/images/Day3/day3bg.png",
+    D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
+    D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
+    D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png",
+    D3_boss_65_png: "res/images/Day3/65b.png",
+    D3_boss_66_png: "res/images/Day3/66b.png",
+    D3_boss_68_png: "res/images/Day3/68b.png",
+    D3_boss_69_png: "res/images/Day3/69b.png",
+    D3_boss_73_png: "res/images/Day3/73b.png",
+    D3_boss_76_png: "res/images/Day3/76b.png",
+    D3_boss_80_png: "res/images/Day3/80b.png",
+    D3_boss_81_png: "res/images/Day3/81b.png",
+    D3_boss_83_png: "res/images/Day3/83b.png",
+    D3_boss_84_png: "res/images/Day3/84b.png",
+    D3_boss_85_png: "res/images/Day3/85b.png",
 };
 
 var g_resources = [
@@ -52,11 +66,29 @@ var g_resources = [
     res.arrows,
     res.office,
 	res.day2bg_png,
+    res.D3_bg_png,
+    res.D3_boss_normal_png,
+    res.D3_boss_happy_png,
+    res.D3_boss_angry_png,
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
+<<<<<<< HEAD
     res.filingcabinet_png,
     res.desk_png,
     res.trash_png,
     res.D3_bg_png
+=======
+    res.D3_boss_65_png,
+    res.D3_boss_66_png,
+    res.D3_boss_68_png,
+    res.D3_boss_69_png,
+    res.D3_boss_73_png,
+    res.D3_boss_76_png,
+    res.D3_boss_80_png,
+    res.D3_boss_81_png,
+    res.D3_boss_83_png,
+    res.D3_boss_84_png,
+    res.D3_boss_85_png,
+>>>>>>> 55d7e8a9973dce58c9bf674f91dcc25214a62e8f
 ];

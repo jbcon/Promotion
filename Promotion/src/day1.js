@@ -35,7 +35,7 @@ var Day1Layer = cc.Layer.extend({
 		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
-		cc.audioEngine.playMusic(res.day1_music);
+		cc.audioEngine.playMusic(res.day1_music, true);
 
 		//background
 		this._office = cc.Sprite.create(res.office);
@@ -117,43 +117,41 @@ var Day1Layer = cc.Layer.extend({
     	cc.eventManager.addListener({
 	        event: cc.EventListener.KEYBOARD,
 	        onKeyPressed: function(keyCode, event){
+	        	//if left is pressed
 	        	if (keyCode == 37) {
 	        		key = "LEFT";
-	        		count = 1;
-	        		if (leftarray[left-1].y<=event.getCurrentTarget()._abar.y+30){
-	        			console.log("score!");
-	        			if (left > 0){
-	        				leftarray[left-1].y = size.height+100;
-	        			} else {
-	        				leftarray[4].y = size.height+100;
+	        		count = 1; //for animation
+	        		//loop to see if any of the sprites are close to its correct pos
+	        		for (var i = 0; i < 5; i++) {
+	        			if (leftarray[i].y<80 && leftarray[i].y>-40){
+	        				console.log("score!");
+	        				leftarray[i].y = -50;
 	        			}
-
-	        		}
+	        		};
 	        	}
+	        	//if right is pressed
 	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
-	            	if (rightarray[right-1].y<=event.getCurrentTarget()._abar.y+30){
-	        			console.log("score!");
-	        			if (right > 0){
-	        				rightarray[right-1].y = size.height+100;
-	        			} else {
-	        				rightarray[4].y = size.height+100;
+	            	for (var i = 0; i < 5; i++) {
+	        			if (rightarray[i].y<80 && rightarray[i].y>-40){
+	        				console.log("score!");
+	        				rightarray[i].y = -50;
 	        			}
-	        		}
+	        		};
 				}
+				//if down is pressed
 	            else if (keyCode == 40) {
 	            	key = "DOWN";
 	            	count = 2;
-	            	if (downarray[down-1].y<=event.getCurrentTarget()._abar.y+30){
-	        			console.log("score!");
-	        			if (down > 0){
-	        				downarray[down-1].y = size.height+100;
-	        			} else {
-	        				downarray[4].y = size.height+100;
+	            	for (var i = 0; i < 5; i++) {
+	        			if (downarray[i].y<80 && downarray[i].y>-40){
+	        				console.log("score!");
+	        				downarray[i].y = -50;
 	        			}
-	        		}
+	        		};
 	            }
+	            //if anything else is pressed reset animation
 	            else count = 0;
 
 	            //handle animation
@@ -169,7 +167,7 @@ var Day1Layer = cc.Layer.extend({
 	            console.log(key);
 	        },
 	        onKeyReleased: function(keyCode, event){
-	        	//set delay (ms) for desk animation
+	        	//set delay (ms) for desk animation reset
 	        	setTimeout(function() {
 	        		event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        		event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[0]);
@@ -183,8 +181,10 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
+	//function to move the arrow sprites
 	move:function () {
 		random = Math.floor(Math.random() * 3) + 1;
+		//randomly picks with sprite to use and moves it
 		switch(random){
 			case 1: //left
 				setTimeout(function() {
@@ -211,44 +211,15 @@ var Day1Layer = cc.Layer.extend({
 				}, 80);
 				break;
 		}
-	},
-	//left arrow update
-	updateLeft:function () {
-		leftarray[left].attr({
-			//y: leftarray[left].y - 10
-		});
-		if (leftarray[left].y <= -40){
-			leftarray[left].y = cc.winSize.height + 40;
-			left+=1;
-		}
-		if (left >= leftarray.length){
-			left = 0;
-		}
-	},
-	//down arrow update
-	updateDown:function () {
-		downarray[down].attr({
-			y: downarray[down].y - 10
-		});
-		if (downarray[down].y <= -40){
-			downarray[down].y = cc.winSize.height + 40;
-			down+=1;
-		}
-		if (down >= downarray.length){
-			down = 0;
-		}
-	},
-	//right arrow update
-	updateRight:function () {
-		rightarray[right].attr({
-			y: rightarray[right].y - 10
-		});
-		if (rightarray[right].y <= -40){
-			rightarray[right].y = cc.winSize.height + 40;
-			right+=1;
-		}
-		if (right >= rightarray.length){
-			right = 0;
+		//how to lose lives
+		for (var i = 0; i < 5; i++) {
+			if (leftarray[i].y == -40) lives--;
+			if (downarray[i].y == -40) lives--;
+			if (rightarray[i].y == -40) lives--;
+		};
+		if (lives <= 0) {
+			console.log("GG");
+			g_scene = 1;
 		}
 	}
 });
