@@ -1,5 +1,12 @@
 Kiss-Ass: The Promotioning
 =========
+A Five-Fourths Production:
+  -Devin Comeau
+  -John Conover
+  -Chia-Ming "Tim" Huang
+  -Julius Lee
+  -Bobby Parker
+
 Controls:
 Day 1:
   -Press appropriate arrow key when prompted
