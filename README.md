@@ -9,7 +9,7 @@ A Five-Fourths Production:
 
 Controls:
 Day 1:
-  * Press appropriate arrow key when prompted
+  * Press appropriate arrow key when they overlap.
   
 Night 1 and 2:
   * Space: jump
