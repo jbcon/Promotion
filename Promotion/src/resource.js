@@ -7,6 +7,7 @@ var res = {
     outbox : "res/images/Day1/D1_Outbox_st.png",
     arrows : "res/images/Day1/arrow.png",
     office : "res/images/Day1/office.png",
+    email : "res/images/email.png",
     
     // Night
     N_BG_png : "res/images/N_PlayBG_test.png",
