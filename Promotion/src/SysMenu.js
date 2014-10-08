@@ -7,14 +7,15 @@ var SysMenu = cc.Layer.extend({
 		//get window size
 		var size = cc.winSize;
 
-		//email background
-		this.bg = cc.Sprite.create(res.email);
-		this.bg.attr({
-			x:405,
-			y:300,
-			scale: 0.8
-		});
-		this.addChild(this.bg);
+		var title = new cc.LabelTTF("KISS-ASS", "Arial", 175);
+		title.x = size.width / 2;
+		title.y = size.height / 1.5;
+		this.addChild(title);
+
+		var label = new cc.LabelTTF("[PRESS START]", "Arial", 40);
+		label.x = size.width / 2;
+		label.y = 100;
+		this.addChild(label);
 
 		//day1 sprite from menu sprite sheet
 		var Day1Normal = new cc.Sprite(res.menu, cc.rect(0,0,126,33));
@@ -35,9 +36,9 @@ var SysMenu = cc.Layer.extend({
 
 		//put these on the middle of the screen
 		var mainMenu = new cc.Menu(day1, day2, night);
-		mainMenu.alignItemsVerticallyWithPadding(10);
+		mainMenu.alignItemsHorizontallyWithPadding(10);
         mainMenu.x = size.width/2;
-        mainMenu.y = size.height/2;
+        mainMenu.y = 200;
         this.addChild(mainMenu, 1, 2);
 	},
 	//when day1 sprite is clicked (currently "new game")
