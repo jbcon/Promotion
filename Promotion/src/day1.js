@@ -203,7 +203,7 @@ var Day1Layer = cc.Layer.extend({
 	},
 	update:function() {
 		//update score
-		totScore.setString("Score: " + score);
+		totScore.setString("Score: " + g_score);
 		//how to lose lives
 		for (var i = 0; i < 5; i++) {
 			if (Math.floor(leftarray[i].y) == -41) {
