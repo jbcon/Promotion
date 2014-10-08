@@ -8,7 +8,7 @@ var gameSpeed = 700;
 //game length in seconds
 var gameTime = 60;
 
-var score = 0;
+var day2Score = 0;
 
 //jumping enum
 if(typeof RunnerStat == "undefined") {
@@ -210,10 +210,10 @@ var Day2Layer = cc.Layer.extend({
             }
         }
         if (this.state == RunnerStat.sliding){
-        	score += 2;
+        	day2Score += 2;
         }
         else{
-        	score++;
+        	day2Score++;
         }
 
 
@@ -358,7 +358,7 @@ var Day2Scene = cc.Scene.extend({
 
 		this.bgLayer.setPosition(cc.p(-movement,0));
 
-        this.scoreText.setString("Score: " + score);
+        this.scoreText.setString("Score: " + day2Score);
 
 	},
 
