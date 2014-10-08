@@ -1,7 +1,7 @@
 //globals
 
 //bottommost ground height
-var initialGroundHeight = 50;
+var initialGroundHeight = 0;
 //player start position
 var playerStartX = 100;
 var gameSpeed = 700;
@@ -28,20 +28,16 @@ function Day2Player (space, groundHeight){
 		var frame = cc.spriteFrameCache.getSpriteFrame(str);
 		animFrames.push(frame);
 	}
-
 	var animation = cc.Animation.create(animFrames, 0.06);
 	this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
+
 	this.sprite = new cc.PhysicsSprite("#D2_run_f1.png");
 	this.sprite.runAction(this.runningAction);
 	this.playerSpeed = gameSpeed;
 
-	this.sprite.attr({
-		scale: 0.25
-	});
-
 	var contentSize = this.sprite.getContentSize();
 
-	this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+	this.body = new cp.Body(1, cp.momentForBox(Infinity, contentSize.width, contentSize.height));
 	
 
 	//set player start position
@@ -51,7 +47,7 @@ function Day2Player (space, groundHeight){
 	this.body.applyImpulse(cp.v(this.playerSpeed, 0), cp.v(0,0));
 
 	//create player shape
-	this.shape = new cp.BoxShape(this.body, contentSize.width, groundHeight);
+	this.shape = new cp.BoxShape(this.body, contentSize.width, contentSize.height);
 	space.addShape(this.shape);
 
 	//assign body to player sprite
@@ -93,7 +89,13 @@ var Day2BgLayer = cc.Layer.extend({
 
 		var newPos = this.map0.getPositionX()+this.map0.width;
 		this.map1.setPosition(cc.p(newPos, this.map0.height/2));
-	}
+	},
+	onExit:function() {
+        this.player.runningAction.release();
+        this.player.jumpUpAction.release();
+        this.player.jumpDownAction.release();
+        this._super();
+    },
 
 });
 
@@ -182,7 +184,7 @@ var Day2Layer = cc.Layer.extend({
 		var trashWidth = tempTrash.getContentSize().width;
 
 		//used to iterate over the span of the level
-		var iter = cc.winSize.width;
+		var iter = cc.winSize.width*4;
 		for (; iter < gameWidth; iter += Math.max(cabWidth, trashWidth) * 8){
 			var result = Math.random();
 			if (result <= spawnChance){
@@ -196,8 +198,8 @@ var Day2Layer = cc.Layer.extend({
 					console.log("CABINET");
 				}
 				//otherwise, make a trash can
-				else if (result < spawnChance / 2){
-					var newObs = new Obstacle(res.trash,
+				else if (result <= spawnChance / 2){
+					var newObs = new Obstacle(res.trash_png,
 						this.space, iter,tempTrash.getContentSize().height/2);
 					this.addChild(newObs);
 					this.obstacle_array.push(newObs);
