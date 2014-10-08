@@ -23,6 +23,7 @@
         "src/night_end.js",
         "src/globals.js",
         "src/night_check.js",
-        "src/transition.js"
+        "src/transition.js",
+        "src/day3.js"
     ]
 }
