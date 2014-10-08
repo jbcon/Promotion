@@ -26,6 +26,18 @@ var res = {
     day2bg_png: "res/images/Day2/day2bg.png",
     D2_run_png: "res/images/Day2/D2_run.png",
     D2_run_plist: "res/images/Day2/D2_run.plist",
+    D2_jump_png: "res/images/Day2/D2_jump.png",
+    D2_jump_plist: "res/images/Day2/D2_jump.plist",
+    D2_jump_f1_png: "res/images/Day2/D2_jump_f1.png",
+    D2_jump_f2_png: "res/images/Day2/D2_jump_f2.png",
+    D2_slide_png: "res/images/Day2/D2_slide.png",
+    D2_slide_plist: "res/images/Day2/D2_slide.plist",
+    filingcabinet_png: "res/images/Day2/filingcabinet.png",
+    desk_png: "res/images/Day2/desk.png",
+    trash_png: "res/images/Day2/trash.png",
+    coffee_wav: "res/Audio/coffee.wav",
+    yum_wav: "res/Audio/yum.wav",
+    spill_wav: "res/Audio/spill.wav",
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
@@ -33,6 +45,7 @@ var res = {
     D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
     D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
     D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png",
+
     D3_boss_65_png: "res/images/Day3/65p.png",
     D3_boss_66_png: "res/images/Day3/66p.png",
     D3_boss_68_png: "res/images/Day3/68p.png",
@@ -86,6 +99,17 @@ var g_resources = [
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
+    res.D2_jump_png,
+    res.D2_jump_plist,
+    res.D2_slide_png,
+    res.D2_slide_plist,
+    res.filingcabinet_png,
+    res.desk_png,
+    res.trash_png,
+    res.coffee_wav,
+    res.yum_wav,
+    res.spill_wav,
+    res.D3_bg_png,
     res.D3_boss_65_png,
     res.D3_boss_66_png,
     res.D3_boss_68_png,
@@ -96,6 +120,7 @@ var g_resources = [
     res.D3_boss_81_png,
     res.D3_boss_83_png,
     res.D3_boss_84_png,
+
     res.D3_boss_85_png,
     res.D3_player_65_png,
     res.D3_player_66_png,
@@ -110,4 +135,3 @@ var g_resources = [
     res.D3_player_85_png,
     res.D3_player_90_png,
 ];
-

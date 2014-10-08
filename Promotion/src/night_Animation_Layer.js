@@ -141,7 +141,6 @@ var AnimationLayer = cc.Layer.extend({
                 this.sprite.runAction(this.runningAction);
             }
         }
-        console.log(vel.y);
 
     },
     
