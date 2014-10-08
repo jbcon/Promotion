@@ -17,6 +17,7 @@ var Day1Layer = cc.Layer.extend({
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
 		cc.audioEngine.playMusic(res.day1_music, true);
+		//"The Cannery by Kevin Macleod"
 
 		//background
 		this._office = cc.Sprite.create(res.office);
