@@ -57,7 +57,8 @@ var NightScene = cc.Scene.extend({
         this.shapesToRemove = [];
         
         this.timer +=1;
-        if(this.timer == 1000){
+
+        if(this.timer == 2000){
             this.gameOver();
         }
     },
