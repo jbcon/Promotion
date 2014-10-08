@@ -25,7 +25,10 @@ var res = {
     day2bg_png: "res/images/Day2/day2bg.png",
     
     // Day 3
-    D3_bg_png: "res/images/Day3/D3_DaBoss_st.png",
+    D3_bg_png: "res/images/Day3/day3bg.png",
+    D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
+    D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
+    D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png"
 };
 
 var g_resources = [
@@ -47,6 +50,9 @@ var g_resources = [
     res.arrows,
     res.office,
 	res.day2bg_png,
-    res.D3_bg_png
+    res.D3_bg_png,
+    res.D3_boss_normal_png,
+    res.D3_boss_happy_png,
+    res.D3_boss_angry_png,
 ];
 
