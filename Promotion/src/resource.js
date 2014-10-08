@@ -29,6 +29,7 @@ var res = {
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
+    D3_player_png: "res/images/Day3/D3_player_f1.png",
     D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
     D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
     D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png",
@@ -43,6 +44,19 @@ var res = {
     D3_boss_83_png: "res/images/Day3/83p.png",
     D3_boss_84_png: "res/images/Day3/84p.png",
     D3_boss_85_png: "res/images/Day3/85p.png",
+    D3_player_65_png: "res/images/Day3/65b.png",
+    D3_player_66_png: "res/images/Day3/66b.png",
+    D3_player_68_png: "res/images/Day3/68b.png",
+    D3_player_69_png: "res/images/Day3/69b.png",
+    D3_player_73_png: "res/images/Day3/73b.png",
+    D3_player_76_png: "res/images/Day3/76b.png",
+    D3_player_80_png: "res/images/Day3/80b.png",
+    D3_player_81_png: "res/images/Day3/81b.png",
+    D3_player_83_png: "res/images/Day3/83b.png",
+    D3_player_84_png: "res/images/Day3/84b.png",
+    D3_player_85_png: "res/images/Day3/85b.png",
+    D3_player_90_png: "res/images/Day3/90p.png",
+    
 };
 
 var g_resources = [
@@ -65,6 +79,7 @@ var g_resources = [
     res.office,
 	res.day2bg_png,
     res.D3_bg_png,
+    res.D3_player_png,
     res.D3_boss_normal_png,
     res.D3_boss_happy_png,
     res.D3_boss_angry_png,
@@ -82,5 +97,17 @@ var g_resources = [
     res.D3_boss_83_png,
     res.D3_boss_84_png,
     res.D3_boss_85_png,
+    res.D3_player_65_png,
+    res.D3_player_66_png,
+    res.D3_player_68_png,
+    res.D3_player_69_png,
+    res.D3_player_73_png,
+    res.D3_player_76_png,
+    res.D3_player_80_png,
+    res.D3_player_81_png,
+    res.D3_player_83_png,
+    res.D3_player_84_png,
+    res.D3_player_85_png,
+    res.D3_player_90_png,
 ];
 
