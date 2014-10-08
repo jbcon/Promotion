@@ -15,8 +15,8 @@ var res = {
     N_runner_png : "res/images/N_running.png",
     N_runner_plist : "res/images/N_running.plist",
     N_map_png : "res/images/DreamBG.png",
-    N_map00_tmx : "res/images/N_map02.tmx",
-    N_map01_tmx : "res/images/N_map01.tmx",
+    N_map00_tmx : "res/images/N_map01.tmx",
+    N_map01_tmx : "res/images/N_map02.tmx",
     N_checks_png : "res/images/N_checks.png",
     N_checks_plist : "res/images/N_checks.plist",
     
@@ -39,6 +39,7 @@ var res = {
     yum_wav: "res/Audio/yum.wav",
     spill_wav: "res/Audio/spill.wav",
     sabre_mp3: "res/Audio/01-khachaturian-sabre-dance.mp3",
+    sunlight_wav: "res/Audio/Living_In_The_Sunlight.wav",
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
@@ -111,6 +112,7 @@ var g_resources = [
     res.yum_wav,
     res.spill_wav,
     res.sabre_mp3,
+    res.sunlight_wav,
     res.D3_bg_png,
     res.D3_boss_65_png,
     res.D3_boss_66_png,

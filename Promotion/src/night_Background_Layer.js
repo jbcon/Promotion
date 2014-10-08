@@ -37,8 +37,8 @@ var BackgroundLayer = cc.Layer.extend({
         this.addChild(this.spriteSheet);
         
         // load map
-        this.loadObjects(this.map01, 0);
-        this.loadObjects(this.map00, 1);
+        this.loadObjects(this.map00, 0);
+        this.loadObjects(this.map01, 1);
         
         // update
         this.scheduleUpdate();

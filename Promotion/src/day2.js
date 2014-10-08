@@ -1,5 +1,3 @@
-//Sabre Dance: copyright Khachaturian
-
 
 //globals
 

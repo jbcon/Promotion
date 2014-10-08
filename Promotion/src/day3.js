@@ -37,3 +37,19 @@ var Day3Scene = cc.Scene.extend({
     
 });
 
+var GameOver = cc.Scene.extend({
+    onEnter: function(){
+        this._super();
+        this.title = new cc.LabelTTF("GAME OVER", "Arial", 130);
+        this.title.x = size.width / 2;
+        this.title.y = size.height / 1.5;
+        this.addChild(this.title);
+
+        this.title2 = new cc.LabelTTF("SCORE: " + g_score, "Arial", 90);
+        this.title2.x = size.width / 2;
+        this.title2.y = size.height / 2.2;
+        this.addChild(this.title2);
+    }
+
+
+});

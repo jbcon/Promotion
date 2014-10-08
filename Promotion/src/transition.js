@@ -15,6 +15,9 @@ var TransitionLayer = cc.Layer.extend({
         }else if(this.s == 4){
             var sceneLabel = new cc.LabelTTF("~Day 3~", "Arial", 38);
         }
+        else{
+            var sceneLabel = new cc.LabelTTF("", "Helvetica", 12);
+        }
         
         sceneLabel.x = size.width / 2;
         sceneLabel.y = 350;
@@ -35,6 +38,9 @@ var TransitionLayer = cc.Layer.extend({
                 var scene = new NightScene();
             }else if (this.s == 4){
                 var scene = new Day3Scene();
+            }
+            else{
+                var scene = new GameOver();
             }
             cc.director.runScene(new cc.TransitionFade(1.2, scene));
         }else{

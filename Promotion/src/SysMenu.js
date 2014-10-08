@@ -13,7 +13,7 @@ var SysMenu = cc.Layer.extend({
 		title.y = size.height / 1.5;
 		this.addChild(title);
 
-		var title2 = new cc.LabelTTF("THE PROMOTION", "Arial", 90);
+		var title2 = new cc.LabelTTF("THE PROMOTIONING", "Arial", 80);
 		title2.x = size.width / 2;
 		title2.y = size.height / 2.2;
 		this.addChild(title2);

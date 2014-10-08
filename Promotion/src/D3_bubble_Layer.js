@@ -2,7 +2,7 @@ var Day3BubbleLayer = cc.Layer.extend({
     size: 0,
     display:0,
     di:0,
-    keyArray: [65,66,67,68,69,73,76,80,81,83,84,85],
+    keyArray: [65,66,68,69,73,76,80,81,83,84,85],
     ansArray: [],
     ki:0,
     ai:0,
@@ -63,11 +63,13 @@ var Day3BubbleLayer = cc.Layer.extend({
                         event.getCurrentTarget().displayBubble2(event.getCurrentTarget().ki);
                         event.getCurrentTarget().ki +=1;
                         D3BossLayer.bossStatusChange(1);
+                        g_score += 100;
                     }else{
                         event.getCurrentTarget().displayBubble2(11);
                         D3BossLayer.bossStatusChange(2);
-                        event.getCurrentTarget().mistake += 1;
-                        if(event.getCurrentTarget().mistake > 4){
+                        event.getCurrentTarget().mistakes += 1;
+                        console.log(event.getCurrentTarget().mistakes);
+                        if(event.getCurrentTarget().mistakes > 2){
                             event.getCurrentTarget().gameOverNow();
                         }
                     }
@@ -153,6 +155,9 @@ var Day3BubbleLayer = cc.Layer.extend({
     
     gameOverNow:function(){
         cc.log("gameOver");
+        g_scene = 5;    
+        var scene = new TransitionScene();
+        cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }    
 });
 

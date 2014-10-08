@@ -13,6 +13,8 @@ var NightScene = cc.Scene.extend({
         this.addChild(this.gameLayer);
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status); // add status layer
         
+        cc.audioEngine.setMusicVolume(0.8);
+        cc.audioEngine.playMusic(res.sunlight_wav,true);
         this.scheduleUpdate(); // update
     },
     
@@ -65,11 +67,13 @@ var NightScene = cc.Scene.extend({
     
     gameOver:function(){
         cc.log("==game over");
+        cc.audioEngine.stopMusic();
         var sL = this.getChildByTag(TagOfLayer.Status);
         var ctmp = sL.checks;
         g_score += ctmp*100;
         if(g_nightState == 0){
             g_scene = 2;
+            g_nightState = 1;
         }else{
             g_scene = 4;
         }
