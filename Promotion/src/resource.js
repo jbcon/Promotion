@@ -31,7 +31,17 @@ var res = {
     D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
     D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
     D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png",
-    D3_boss_a_png: "res/images/Day3/aboss.png",
+    D3_boss_65_png: "res/images/Day3/65b.png",
+    D3_boss_66_png: "res/images/Day3/66b.png",
+    D3_boss_68_png: "res/images/Day3/68b.png",
+    D3_boss_69_png: "res/images/Day3/69b.png",
+    D3_boss_73_png: "res/images/Day3/73b.png",
+    D3_boss_76_png: "res/images/Day3/76b.png",
+    D3_boss_80_png: "res/images/Day3/80b.png",
+    D3_boss_81_png: "res/images/Day3/81b.png",
+    D3_boss_83_png: "res/images/Day3/83b.png",
+    D3_boss_84_png: "res/images/Day3/84b.png",
+    D3_boss_85_png: "res/images/Day3/85b.png",
 };
 
 var g_resources = [
@@ -60,6 +70,16 @@ var g_resources = [
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
-    res.D3_boss_a_png
+    res.D3_boss_65_png,
+    res.D3_boss_66_png,
+    res.D3_boss_68_png,
+    res.D3_boss_69_png,
+    res.D3_boss_73_png,
+    res.D3_boss_76_png,
+    res.D3_boss_80_png,
+    res.D3_boss_81_png,
+    res.D3_boss_83_png,
+    res.D3_boss_84_png,
+    res.D3_boss_85_png,
 ];
 
