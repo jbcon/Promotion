@@ -69,7 +69,7 @@ var Intro = cc.Layer.extend({
 		label2.setColor((0,0,0));
 		this.addChild(label2);
 
-		var start = new cc.LabelTTF("[PRESS START]", "Arial", 40);
+		var start = new cc.LabelTTF("[PRESS ENTER]", "Arial", 40);
 		start.x = size.width / 2;
 		start.y = 100;
 		this.addChild(start);
