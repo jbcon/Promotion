@@ -143,7 +143,7 @@ var Day1Layer = cc.Layer.extend({
 	            //if anything else is pressed reset animation
 	            else count = 0;
 
-	            //handle animation
+	            //handle animation of desk + player
 	            event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
 				event.getCurrentTarget()._sprite.attr({
@@ -170,7 +170,7 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
-	//function to move the arrow sprites
+	//function to move the arrow sprites at the background beat of song
 	move:function () {
 		random = Math.floor(Math.random() * 3) + 1;
 		//randomly picks with sprite to use and moves it
