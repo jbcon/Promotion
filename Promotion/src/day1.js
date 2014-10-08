@@ -12,7 +12,7 @@ var Day1Layer = cc.Layer.extend({
 		var key = ""; //for input
 		var count = 0; //for accessing each sprite
 		lives = 3; //miss 3 and you lose
-		score = 0; // total score
+		g_score = 0; // total score
 		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
@@ -112,7 +112,7 @@ var Day1Layer = cc.Layer.extend({
 	        			if (leftarray[i].y<80 && leftarray[i].y>-20){
 	        				console.log("score!");
 	        				leftarray[i].y = -50;
-	        				score += 500;
+	        				g_score += 500;
 	        			}
 	        		};
 	        	}
@@ -124,7 +124,7 @@ var Day1Layer = cc.Layer.extend({
 	        			if (rightarray[i].y<80 && rightarray[i].y>-20){
 	        				console.log("score!");
 	        				rightarray[i].y = -50;
-	        				score += 500;
+	        				g_score += 500;
 	        			}
 	        		};
 				}
@@ -136,7 +136,7 @@ var Day1Layer = cc.Layer.extend({
 	        			if (downarray[i].y<80 && downarray[i].y>-20){
 	        				console.log("score!");
 	        				downarray[i].y = -50;
-	        				score += 500;
+	        				g_score += 500;
 	        			}
 	        		};
 	            }
