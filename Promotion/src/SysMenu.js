@@ -16,7 +16,7 @@ var SysMenu = cc.Layer.extend({
 		label.x = size.width / 2;
 		label.y = 100;
 		this.addChild(label);
-
+/*
 		//day1 sprite from menu sprite sheet
 		var Day1Normal = new cc.Sprite(res.menu, cc.rect(0,0,126,33));
 		var Day1Selected = new cc.Sprite(res.menu, cc.rect(0,33,126,33));
@@ -40,7 +40,24 @@ var SysMenu = cc.Layer.extend({
         mainMenu.x = size.width/2;
         mainMenu.y = 200;
         this.addChild(mainMenu, 1, 2);
+*/
+        //keyboard event listener
+    	cc.eventManager.addListener({
+	        event: cc.EventListener.KEYBOARD,
+	        onKeyPressed: function(keyCode, event){
+	        	if(keyCode == 13){
+	        		event.getCurrentTarget().Introduction();
+	        	}
+	        }
+	    }, this);
+	        	
 	},
+	Introduction:function () {
+		var scene = new cc.Scene();
+		scene.addChild(new Intro());
+		cc.director.runScene(new cc.TransitionFade(1.2, scene));
+	},
+/*
 	//when day1 sprite is clicked (currently "new game")
 	onDay1:function (pSender) {
 		console.log("day1");
@@ -61,6 +78,7 @@ var SysMenu = cc.Layer.extend({
 		var scene = new NightScene();
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }
+*/
 });
 //define SysMenu.scene() to run above code
 SysMenu.scene = function () {
