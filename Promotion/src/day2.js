@@ -1,10 +1,10 @@
 //globals
 
 //bottommost ground height
-var initialGroundHeight = 30;
+var initialGroundHeight = 50;
 //player start position
 var playerStartX = 100;
-var gameSpeed = 400;
+var gameSpeed = 700;
 
 //jumping enum
 if(typeof RunnerStat == "undefined") {
@@ -17,11 +17,24 @@ if(typeof RunnerStat == "undefined") {
 
 function Day2Player (space, groundHeight){
 
-	this.sprite = new cc.PhysicsSprite(res.D2_run_f1_png);
+	cc.spriteFrameCache.addSpriteFrames(res.D2_run_plist);
+	this.spriteSheet = cc.SpriteBatchNode.create(res.D2_run_png);
+
+	var animFrames = [];
+	for (var i = 1; i < 7; i++){
+		var str = "D2_run_f" + i + ".png";
+		var frame = cc.spriteFrameCache.getSpriteFrame(str);
+		animFrames.push(frame);
+	}
+
+	var animation = cc.Animation.create(animFrames, 0.05);
+	this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
+	this.sprite = new cc.PhysicsSprite("#D2_run_f1.png");
+	this.sprite.runAction(this.runningAction);
 	this.playerSpeed = gameSpeed;
 
 	this.sprite.attr({
-		scale: 0.15
+		scale: 0.25
 	});
 
 	var contentSize = this.sprite.getContentSize();

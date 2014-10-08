@@ -22,7 +22,9 @@ var res = {
     // Day 2
     D2_run_f1_png: "res/images/Day2/D2_run_f1.png",
     menu : "res/images/menu.png",
-    day2bg_png: "res/images/Day2/day2bg.png"
+    day2bg_png: "res/images/Day2/day2bg.png",
+    D2_run_png: "res/images/Day2/D2_run.png",
+    D2_run_plist: "res/images/Day2/D2_run.plist"
 };
 
 var g_resources = [
@@ -44,6 +46,8 @@ var g_resources = [
     res.arrows,
     res.office,
 	res.day2bg_png,
-    res.D2_run_f1_png
+    res.D2_run_f1_png,
+    res.D2_run_png,
+    res.D2_run_plist
 ];
 
