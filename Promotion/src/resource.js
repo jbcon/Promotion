@@ -49,12 +49,9 @@ var g_resources = [
     res.arrows,
     res.office,
 	res.day2bg_png,
-<<<<<<< HEAD
     res.D2_run_f1_png,
     res.D2_run_png,
-    res.D2_run_plist
-=======
+    res.D2_run_plist,
     res.D3_bg_png
->>>>>>> b0cc8d545264195f77f656ba3d991b652bac544f
 ];
 
