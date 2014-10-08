@@ -14,7 +14,7 @@ var res = {
     N_runner_png : "res/images/N_running.png",
     N_runner_plist : "res/images/N_running.plist",
     N_map_png : "res/images/DreamBG.png",
-    N_map00_tmx : "res/images/N_map00.tmx",
+    N_map00_tmx : "res/images/N_map02.tmx",
     N_map01_tmx : "res/images/N_map01.tmx",
     N_checks_png : "res/images/N_checks.png",
     N_checks_plist : "res/images/N_checks.plist",
@@ -30,7 +30,8 @@ var res = {
     D3_bg_png: "res/images/Day3/day3bg.png",
     D3_boss_normal_png: "res/images/Day3/D3_boss_normal.png",
     D3_boss_happy_png: "res/images/Day3/D3_boss_happy.png",
-    D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png"
+    D3_boss_angry_png: "res/images/Day3/D3_boss_angry.png",
+    D3_boss_a_png: "res/images/Day3/aboss.png",
 };
 
 var g_resources = [
@@ -59,5 +60,6 @@ var g_resources = [
     res.D2_run_f1_png,
     res.D2_run_png,
     res.D2_run_plist,
+    res.D3_boss_a_png
 ];
 
