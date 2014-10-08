@@ -1,11 +1,4 @@
 var Day3Layer = cc.Layer.extend({
-    keyArray: [65,66,67],
-    size: 0,
-    ki: 0,
-    count: 0, // 0 = normal, 1 = happy, 2 = angry
-    bossX: 3,
-    bossY: 300,
-    bossScale: 0.50,
         
     ctor:function () {
         this._super();
@@ -14,7 +7,7 @@ var Day3Layer = cc.Layer.extend({
     },
     
     init:function () {
-        size = cc.winSize;
+        var size = cc.winSize;
         
         // add background
         this.bg = new cc.Sprite(res.D3_bg_png);
@@ -29,14 +22,18 @@ var Day3Layer = cc.Layer.extend({
 
 var Day3Scene = cc.Scene.extend({
     gameLayer: null,
+    ki: 0,
+    keyArray: [65,66,67],
+    count:0,
     
     onEnter:function () {        
         this._super();
         this.gameLayer = cc.Layer.create(); // create game layer (layer that include background, and animation layer
         this.gameLayer.addChild(new Day3Layer());
-        this.gameLayer.addChild(new Day3BossLayer()); // add background layer
+        this.gameLayer.addChild(new Day3BossLayer(),0, TagOfLayer.D3Boss); // add background layer
         this.gameLayer.addChild(new Day3BubbleLayer());
         this.addChild(this.gameLayer);
-    }
+    },
+    
 });
 
