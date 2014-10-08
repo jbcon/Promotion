@@ -1,24 +1,4 @@
-var Day1Screen = cc.Layer.extend({
-	ctor:function () {
-		this._super();
-		//get window size
-		var size = cc.winSize;
-		//maybe screen with "day 1"
-		var label = new cc.LabelTTF("Day 1", "Arial", 40);
-		label.x = size.width / 2;
-		label.y = 0;
-		this.addChild(label);
-
-		//moves "day 1" from bottom to off screen (top)
-		label.runAction(
-            cc.spawn(
-                cc.moveBy(5.5, cc.p(0, size.height + 40))
-            )
-        );
-	}
-});
-
-
+//Day 1
 var Day1Layer = cc.Layer.extend({
 	ctor:function () {
 		//super init
@@ -72,9 +52,8 @@ var Day1Layer = cc.Layer.extend({
 			scale: 0.8
 		});
 		this.addChild(this._abar);
-		//this._abar.runAction(cc.moveBy(1,cc.p(200,0)));
 
-		//left arrow
+		//left arrow sprite
 		leftarray = [];
 		left = 0;
 		for (var i=0; i<5; i++){
@@ -88,7 +67,7 @@ var Day1Layer = cc.Layer.extend({
 			leftarray[i] = this._larrow;
 		}
 		
-		//down arrow
+		//down arrow sprite
 		downarray = [];
 		down = 0;
 		for (var i=0; i<5; i++){
@@ -102,7 +81,7 @@ var Day1Layer = cc.Layer.extend({
 			downarray[i] = this._darrow
 		}
 
-		//right arrow
+		//right arrow sprite
 		rightarray = [];
 		right = 0;
 		for (var i=0; i<5; i++){
@@ -164,7 +143,7 @@ var Day1Layer = cc.Layer.extend({
 	            //if anything else is pressed reset animation
 	            else count = 0;
 
-	            //handle animation
+	            //handle animation of desk + player
 	            event.getCurrentTarget().removeChild(event.getCurrentTarget()._sprite,true);
 	        	event.getCurrentTarget()._sprite = cc.Sprite.create(spriteList[count]);
 				event.getCurrentTarget()._sprite.attr({
@@ -191,7 +170,7 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
-	//function to move the arrow sprites (basically update function)
+	//function to move the arrow sprites at the background beat of song
 	move:function () {
 		random = Math.floor(Math.random() * 3) + 1;
 		//randomly picks with sprite to use and moves it

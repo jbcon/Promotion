@@ -1,8 +1,8 @@
 var Day3BossLayer = cc.Layer.extend({
     count: 0, // 0 = normal, 1 = happy, 2 = angry
-    bossX: 3,
-    bossY: 300,
-    bossScale: 0.50,
+    bossX: 2,
+    bossY: 240,
+    bossScale: 1,
     _sprite:null,
     change: -1,
         
