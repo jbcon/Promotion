@@ -32,6 +32,7 @@ var Day1Layer = cc.Layer.extend({
 		var key = ""; //for input
 		var count = 0; //for accessing each sprite
 		lives = 3; //miss 3 and you lose
+		score = 0; // total score
 		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
@@ -45,6 +46,11 @@ var Day1Layer = cc.Layer.extend({
 			scale:0.8
 		});
 		this.addChild(this._office);
+
+		//score
+		totScore = cc.LabelTTF.create("", "Arial", 30);
+		totScore.setPosition(new cc.Point(100, 500));
+		this.addChild(totScore);
 
 		//sprite array
 		spriteList = [res.desk, res.outbox, res.shred, res.file];
@@ -112,6 +118,7 @@ var Day1Layer = cc.Layer.extend({
 	
 		//update everything
 		this.schedule(this.move, 0.33);
+		this.schedule(this.update);
 	
 		//keyboard event listener
     	cc.eventManager.addListener({
@@ -123,9 +130,10 @@ var Day1Layer = cc.Layer.extend({
 	        		count = 1; //for animation
 	        		//loop to see if any of the sprites are close to its correct pos
 	        		for (var i = 0; i < 5; i++) {
-	        			if (leftarray[i].y<80 && leftarray[i].y>-40){
+	        			if (leftarray[i].y<80 && leftarray[i].y>-20){
 	        				console.log("score!");
 	        				leftarray[i].y = -50;
+	        				score += 500;
 	        			}
 	        		};
 	        	}
@@ -134,9 +142,10 @@ var Day1Layer = cc.Layer.extend({
 	            	key = "RIGHT";
 	            	count = 3;
 	            	for (var i = 0; i < 5; i++) {
-	        			if (rightarray[i].y<80 && rightarray[i].y>-40){
+	        			if (rightarray[i].y<80 && rightarray[i].y>-20){
 	        				console.log("score!");
 	        				rightarray[i].y = -50;
+	        				score += 500;
 	        			}
 	        		};
 				}
@@ -145,9 +154,10 @@ var Day1Layer = cc.Layer.extend({
 	            	key = "DOWN";
 	            	count = 2;
 	            	for (var i = 0; i < 5; i++) {
-	        			if (downarray[i].y<80 && downarray[i].y>-40){
+	        			if (downarray[i].y<80 && downarray[i].y>-20){
 	        				console.log("score!");
 	        				downarray[i].y = -50;
+	        				score += 500;
 	        			}
 	        		};
 	            }
@@ -181,7 +191,7 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
-	//function to move the arrow sprites
+	//function to move the arrow sprites (basically update function)
 	move:function () {
 		random = Math.floor(Math.random() * 3) + 1;
 		//randomly picks with sprite to use and moves it
@@ -211,15 +221,33 @@ var Day1Layer = cc.Layer.extend({
 				}, 80);
 				break;
 		}
+	},
+	update:function() {
+		//update score
+		totScore.setString("Score: " + score);
 		//how to lose lives
 		for (var i = 0; i < 5; i++) {
-			if (leftarray[i].y == -40) lives--;
-			if (downarray[i].y == -40) lives--;
-			if (rightarray[i].y == -40) lives--;
+			if (Math.floor(leftarray[i].y) == -41) {
+				lives--;
+				leftarray[i].y = -50;
+			}
+			if (Math.floor(downarray[i].y) == -41) {
+				lives--;
+				downarray[i].y = -50;
+			}
+			if (Math.floor(rightarray[i].y) == -41) {
+				lives--;
+				rightarray[i].y = -50;
+			}
+			console.log(lives);
 		};
+		//if all lives are lost
 		if (lives <= 0) {
 			console.log("GG");
+			cc.audioEngine.stopMusic(res.day1_music);
 			g_scene = 1;
+			var scene = new TransitionScene();
+        	cc.director.runScene(new cc.TransitionFade(1.2, scene));
 		}
 	}
 });
