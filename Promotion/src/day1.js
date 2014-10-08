@@ -28,9 +28,10 @@ var Day1Layer = cc.Layer.extend({
 	init:function () {
 		
 		//get window size
-		var size = cc.winSize;
+		size = cc.winSize;
 		var key = ""; //for input
 		var count = 0; //for accessing each sprite
+		lives = 3; //miss 3 and you lose
 		
 		//music
 		cc.audioEngine.setMusicVolume(0.8);
@@ -65,41 +66,52 @@ var Day1Layer = cc.Layer.extend({
 			scale: 0.8
 		});
 		this.addChild(this._abar);
+		//this._abar.runAction(cc.moveBy(1,cc.p(200,0)));
 
+		//left arrow
 		leftarray = [];
 		left = 0;
-		//left arrow
-		for (var i=0; i<10; i++){
+		for (var i=0; i<5; i++){
 			this._larrow = cc.Sprite.create(res.arrows, cc.rect(0,0,110,100));
 			this._larrow.attr({
 				x: size.width -295,
-				y: cc.winSize.height + 40,
+				y: cc.winSize.height + 100,
 				scale: 0.8
 			});
 			this.addChild(this._larrow,0,i);
 			leftarray[i] = this._larrow;
 		}
-		this.schedule(this.updateLeft);
-
+		
 		//down arrow
-		this._darrow = cc.Sprite.create(res.arrows, cc.rect(150,0,110,100))
-		this._darrow.attr({
-			x: size.width -175,
-			y: cc.winSize.height + 40,
-			scale: 0.8
-		});
-		this.schedule(this.updateDown);
-		this.addChild(this._darrow);
+		downarray = [];
+		down = 0;
+		for (var i=0; i<5; i++){
+			this._darrow = cc.Sprite.create(res.arrows, cc.rect(150,0,110,100))
+			this._darrow.attr({
+				x: size.width -175,
+				y: cc.winSize.height + 100,
+				scale: 0.8
+			});
+			this.addChild(this._darrow);
+			downarray[i] = this._darrow
+		}
 
 		//right arrow
-		this._rarrow = cc.Sprite.create(res.arrows, cc.rect(300,0,110,100))
-		this._rarrow.attr({
-			x: size.width -55,
-			y: cc.winSize.height + 40,
-			scale: 0.8
-		});
-		this.schedule(this.updateRight);
-		this.addChild(this._rarrow);
+		rightarray = [];
+		right = 0;
+		for (var i=0; i<5; i++){
+			this._rarrow = cc.Sprite.create(res.arrows, cc.rect(300,0,110,100))
+			this._rarrow.attr({
+				x: size.width -55,
+				y: cc.winSize.height + 100,
+				scale: 0.8
+			});
+			this.addChild(this._rarrow);
+			rightarray[i] = this._rarrow;
+		}
+	
+		//update everything
+		this.schedule(this.move, 0.33);
 	
 		//keyboard event listener
     	cc.eventManager.addListener({
@@ -108,22 +120,38 @@ var Day1Layer = cc.Layer.extend({
 	        	if (keyCode == 37) {
 	        		key = "LEFT";
 	        		count = 1;
-	        		if (event.getCurrentTarget()._larrow.y<=event.getCurrentTarget()._abar.y+20){
+	        		if (leftarray[left-1].y<=event.getCurrentTarget()._abar.y+30){
 	        			console.log("score!");
+	        			if (left > 0){
+	        				leftarray[left-1].y = size.height+100;
+	        			} else {
+	        				leftarray[4].y = size.height+100;
+	        			}
+
 	        		}
 	        	}
 	            else if (keyCode == 39) {
 	            	key = "RIGHT";
 	            	count = 3;
-	            	if (event.getCurrentTarget()._rarrow.y<=event.getCurrentTarget()._abar.y+20){
+	            	if (rightarray[right-1].y<=event.getCurrentTarget()._abar.y+30){
 	        			console.log("score!");
+	        			if (right > 0){
+	        				rightarray[right-1].y = size.height+100;
+	        			} else {
+	        				rightarray[4].y = size.height+100;
+	        			}
 	        		}
 				}
 	            else if (keyCode == 40) {
 	            	key = "DOWN";
 	            	count = 2;
-	            	if (event.getCurrentTarget()._darrow.y<=event.getCurrentTarget()._abar.y+20){
+	            	if (downarray[down-1].y<=event.getCurrentTarget()._abar.y+30){
 	        			console.log("score!");
+	        			if (down > 0){
+	        				downarray[down-1].y = size.height+100;
+	        			} else {
+	        				downarray[4].y = size.height+100;
+	        			}
 	        		}
 	            }
 	            else count = 0;
@@ -155,36 +183,72 @@ var Day1Layer = cc.Layer.extend({
 	        }
     	}, this); 
 	},
-	update:function () {
+	move:function () {
 		random = Math.floor(Math.random() * 3) + 1;
+		switch(random){
+			case 1: //left
+				setTimeout(function() {
+					leftarray[left].y = size.height+100;
+					leftarray[left].runAction(cc.moveTo(1.2,cc.p(size.width -295,-40)));
+					left++;
+					if (left == 5) left = 0;
+				}, 80);
+				break;
+			case 2: //down
+				setTimeout(function() {
+					downarray[down].y = size.height+100;
+					downarray[down].runAction(cc.moveTo(1.2,cc.p(size.width -175,-40)));
+					down++;
+					if (down == 5) down = 0;
+				}, 80);
+				break;
+			case 3: // right
+				setTimeout(function() {
+					rightarray[right].y = size.height+100;
+					rightarray[right].runAction(cc.moveTo(1.2,cc.p(size.width -55,-40)));
+					right++;
+					if (right == 5) right = 0;
+				}, 80);
+				break;
+		}
 	},
 	//left arrow update
 	updateLeft:function () {
 		leftarray[left].attr({
-			y: leftarray[left].y - 10
+			//y: leftarray[left].y - 10
 		});
 		if (leftarray[left].y <= -40){
+			leftarray[left].y = cc.winSize.height + 40;
 			left+=1;
+		}
+		if (left >= leftarray.length){
+			left = 0;
 		}
 	},
 	//down arrow update
 	updateDown:function () {
-		this._darrow.attr({
-			y: this._darrow.y - 10
+		downarray[down].attr({
+			y: downarray[down].y - 10
 		});
-		if (this._darrow.y <= -40){
-			//this.removeChild(this._darrow);
-			this._darrow.y = cc.winSize.height + 40;
+		if (downarray[down].y <= -40){
+			downarray[down].y = cc.winSize.height + 40;
+			down+=1;
+		}
+		if (down >= downarray.length){
+			down = 0;
 		}
 	},
 	//right arrow update
 	updateRight:function () {
-		this._rarrow.attr({
-			y: this._rarrow.y - 10
+		rightarray[right].attr({
+			y: rightarray[right].y - 10
 		});
-		if (this._rarrow.y <= -40){
-			//this.removeChild(this._rarrow);
-			this._rarrow.y = cc.winSize.height + 40;
+		if (rightarray[right].y <= -40){
+			rightarray[right].y = cc.winSize.height + 40;
+			right+=1;
+		}
+		if (right >= rightarray.length){
+			right = 0;
 		}
 	}
 });
