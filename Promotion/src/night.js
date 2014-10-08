@@ -64,7 +64,7 @@ var NightScene = cc.Scene.extend({
     
     gameOver:function(){
         cc.log("==game over");
-        g_scene = 4;
+        g_scene = 2;
         var scene = new TransitionScene();
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }

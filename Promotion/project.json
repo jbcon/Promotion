@@ -25,7 +25,9 @@
         "src/night_check.js",
         "src/transition.js",
         "src/day3.js",
+        "src/obstacle.js",
         "src/D3_boss_Layer.js",
-        "src/D3_bubble_Layer.js"
+        "src/D3_bubble_Layer.js",
+        "src/preday1.js"
     ]
 }
