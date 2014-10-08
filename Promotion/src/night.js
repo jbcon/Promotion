@@ -57,14 +57,25 @@ var NightScene = cc.Scene.extend({
         this.shapesToRemove = [];
         
         this.timer +=1;
-        if(this.timer == 100){
+        if(this.timer == 10000){
             this.gameOver();
         }
     },
     
     gameOver:function(){
         cc.log("==game over");
+<<<<<<< HEAD
+        var sL = this.getChildByTag(TagOfLayer.Status);
+        var ctmp = sL.checks;
+        g_score += ctmp*100;
+        if(g_nightState == 0){
+            g_scene = 2;
+        }else{
+            g_scene = 4;
+        }
+=======
         g_scene = 2;
+>>>>>>> b1b4eebe687b0f5255e61a65748474ebb38718c6
         var scene = new TransitionScene();
         cc.director.runScene(new cc.TransitionFade(1.2, scene));
     }

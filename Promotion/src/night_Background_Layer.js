@@ -37,8 +37,13 @@ var BackgroundLayer = cc.Layer.extend({
         this.addChild(this.spriteSheet);
         
         // load map
+        if(g_nightState == 0){
         this.loadObjects(this.map00, 0);
         this.loadObjects(this.map01, 1);
+        }else{
+        this.loadObjects(this.map00, 1);
+        this.loadObjects(this.map01, 0);
+        }
         
         // update
         this.scheduleUpdate();

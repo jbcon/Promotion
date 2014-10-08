@@ -66,6 +66,10 @@ var Day3BubbleLayer = cc.Layer.extend({
                     }else{
                         event.getCurrentTarget().displayBubble2(11);
                         D3BossLayer.bossStatusChange(2);
+                        event.getCurrentTarget().mistake += 1;
+                        if(event.getCurrentTarget().mistake > 4){
+                            event.getCurrentTarget().gameOverNow();
+                        }
                     }
                 }                
             }
@@ -145,6 +149,10 @@ var Day3BubbleLayer = cc.Layer.extend({
                 this.change2 += 1;
             }
         }         
-    }
+    },
+    
+    gameOverNow:function(){
+        cc.log("gameOver");
+    }    
 });
 
