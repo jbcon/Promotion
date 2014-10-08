@@ -38,6 +38,7 @@ var res = {
     coffee_wav: "res/Audio/coffee.wav",
     yum_wav: "res/Audio/yum.wav",
     spill_wav: "res/Audio/spill.wav",
+    sabre_mp3: "res/Audio/01-khachaturian-sabre-dance.mp3",
     
     // Day 3
     D3_bg_png: "res/images/Day3/day3bg.png",
@@ -109,6 +110,7 @@ var g_resources = [
     res.coffee_wav,
     res.yum_wav,
     res.spill_wav,
+    res.sabre_mp3,
     res.D3_bg_png,
     res.D3_boss_65_png,
     res.D3_boss_66_png,

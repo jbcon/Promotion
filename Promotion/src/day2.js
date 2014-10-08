@@ -1,3 +1,6 @@
+//Sabre Dance: copyright Khachaturian
+
+
 //globals
 
 //bottommost ground height
@@ -319,7 +322,9 @@ var Day2Scene = cc.Scene.extend({
 		this.layer = new Day2Layer(this.space);
 		this.addChild(this.layer);
 
+		cc.audioEngine.playMusic(res.sabre_mp3, true);
 		cc.audioEngine.playEffect(res.coffee_wav);
+
 		this.scheduleUpdate();
 		this.scoreText = cc.LabelTTF.create("Score: 0", "Arial", 30);
 		this.scoreText.setPosition(new cc.Point(100, 500));
@@ -369,6 +374,7 @@ var Day2Scene = cc.Scene.extend({
 		else{
 			cc.audioEngine.playEffect(res.spill_wav);
 		}
+		cc.audioEngine.stopMusic();
 
 		g_scene = 3;
 		var scene = new TransitionScene()
